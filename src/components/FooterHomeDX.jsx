@@ -91,7 +91,7 @@ const FooterHomeDx = () => {
                 </div>
                 <div className="d-flex mx-4 justify-content-center mt-3">
                   <img
-                    src="../img/LinkedIn2_Logo.svg.png"
+                    src="../assets/svg/svgexport-1.svg"
                     x="0"
                     y="0"
                     width="56"
