@@ -83,16 +83,6 @@ const LinkedInNavbar = () => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-
-      {/* CONTENUTO DI PROVA */}
-      <div style={{ height: "2000px", background: "#f0f0f0", marginTop: "56px" }}>
-        <h1>Contenuto della Pagina</h1>
-        <p>
-          Questo è un esempio di contenuto lungo che richiede lo scroll della pagina per essere visualizzato
-          completamente.
-        </p>
-      </div>
-      {/* // */}
     </div>
   );
 };
