@@ -15,7 +15,7 @@ function App() {
         <Routes>
   
 
-          <Route path="/profile" element={<ProfilePage />}></Route>
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
 
       
