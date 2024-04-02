@@ -1,0 +1,57 @@
+/* .custom-navbar .navbar-nav.ml-auto {
+  margin-left: auto !important;
+} */
+
+.custom-navbar .navbar-collapse {
+  justify-content: center;
+}
+
+/* logo */
+.linkedin-logo {
+  margin-left: 181px;
+  margin-right: 5px;
+}
+
+/* voci menù */
+.nav-spacer .nav-link {
+  margin-right: 15px;
+}
+
+/* margine sinistro per la voce "Home" */
+.home-link {
+  margin-left: -151px;
+}
+
+/* larghezza search e colore */
+.search-field {
+  width: 300px;
+  background-color: rgb(238, 243, 249);
+}
+
+/* per fissare la navabr */
+.custom-navbar.fixed-top {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* spazio rotondo finestra "Tu" */
+.profile-pic-placeholder {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.profile-info-container {
+  display: flex;
+  align-items: center;
+}
+
+.profile-pic-container {
+  margin-right: 10px;
+}
+
+.dropdown-item.font-weight-bold {
+  font-weight: bold !important;
+}
