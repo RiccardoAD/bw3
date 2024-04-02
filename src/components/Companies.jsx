@@ -51,6 +51,9 @@ function Companies() {
           </Col>
         </Row>
       </Col>
+      <Col xs={12} className="text-center p-0">
+        <Button className="btn bg-light w-100 text-secondary fw-bold fs-2 p-5 border-0 border-top">Mostra tutto</Button>
+      </Col>
     </Row>
   );
 }

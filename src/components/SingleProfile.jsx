@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Image, Button } from "react-bootstrap";
 
-function SingleProfile({ profileId }) {
+function SingleProfile({ prova }) {
   const [profileData, setProfileData] = useState(null);
 
   useEffect(() => {
     fetchProfileData();
-  }, [profileId]);
+  }, [prova]);
 
   const fetchProfileData = async () => {
     try {
-      const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${profileId}`, {
+      const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${prova}`, {
         headers: {
           Authorization:
             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzlhYWEyODFkODAwMTlhM2VjNTciLCJpYXQiOjE3MTIwNDg1NTQsImV4cCI6MTcxMzI1ODE1NH0.6sHKqviDfFSd8qv2L8aNnu7plOcEuiqkhnhPbe72vKw",
