@@ -3,6 +3,7 @@ import ProfileHeader from "./ProfileHeader";
 import Analisi from "./Analisi";
 import Risorse from "./Risorse";
 import Informazioni from "./Informazioni";
+import Esperienza from "./Esperienza";
 
 const ProfilePage = function () {
     return (
@@ -12,6 +13,7 @@ const ProfilePage = function () {
             <Col className="col-12 col-md-8 col-lg-10 mt-4"><Analisi /></Col>
             <Col className="col-12 col-md-8 col-lg-10 mt-4"><Risorse /></Col>
             <Col className="col-12 col-md-8 col-lg-10 mt-4"><Informazioni /></Col>
+            <Col className="col-12 col-md-8 col-lg-10 mt-4"><Esperienza /></Col>
             </Row>
         </Container>
     )
