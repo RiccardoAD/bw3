@@ -180,4 +180,5 @@
 
 .sectionFooter:hover {
   background-color: #ebebeb;
+  cursor: pointer;
 }
