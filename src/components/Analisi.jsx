@@ -1,42 +1,59 @@
 import { Container, Row, Col } from "react-bootstrap";
-import Card from 'react-bootstrap/Card';
-import EditPen from "../assets/svg/edit_pen_long.svg"
+import Card from "react-bootstrap/Card";
+import PeopleIcon from "../assets/svg/people_icon.svg";
+import ReportsIcon from "../assets/svg/report_icon.svg";
+import EyeIcon from "../assets/svg/eye_icon.svg";
+import RightArrow from "../assets/svg/right_arrow_icon.svg";
 
 const Analisi = function () {
-    return (
-       <Row>
+  return (
+    <Row>
+      <Col>
+        <Card style={{ position: "relative", overflow: "hidden" }}>
+          <div id="otherCards">
+            <h5 className="fw-bold">Analisi</h5>
 
-       <Col>
-       <Card style={{ position: "relative"}}>
-      <Card.Body id="otherCards">
-       
-    <h5>Analisi</h5>
-        <p className="timeAndLocation">Solo per te</p>
+            <div className="subtitles">
+              <img src={EyeIcon}></img>
+              <span> Solo per te</span>
+            </div>
 
-        <Row>
-            <Col><Row>
-                <Col>Icona</Col>
-                <Col><p className="fw-bold">Visualizzazioni profilo</p>
-                <p>Scopri chi ha visitato il tuo profilo.</p></Col></Row></Col>
+            <Row className="d-flex justify-content-start gy-4">
+              <Col className="col-12 col-lg-4">
+                <Row className="gap-2">
+                  <Col className="col-1">
+                    <img src={PeopleIcon} />
+                  </Col>
+                  <Col>
+                    <p className="fw-bold">Visualizzazioni profilo</p>
+                    <span className="sectionContent">Scopri chi ha visitato il tuo profilo.</span>
+                  </Col>
+                </Row>
+              </Col>
 
-                
-                <Col><Row>
-                <Col>Icona</Col>
-                <Col>Impressioni del post</Col></Row></Col>
-        </Row>
-      
-  
-        
-      </Card.Body>
-    </Card>
+              <Col className="col-12 col-lg-4">
+                <Row className="gap-2">
+                  <Col className="col-1">
+                    <img src={ReportsIcon} />
+                  </Col>
+                  <Col>
+                    <p className="fw-bold">Impressioni del profilo</p>
+                    <span className="sectionContent">Crea un post per aumentare l'interesse.</span>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          </div>
+          <Row>
+            <Col className="col-12 sectionFooter">
+              Mostra tutte le analisi
+              <img src={RightArrow} style={{ marginLeft: "10px" }}></img>
+            </Col>
+          </Row>
+        </Card>
+      </Col>
+    </Row>
+  );
+};
 
-       
-       </Col>
-
-
-       </Row>
-    )
-
-}
-
-export default Analisi
+export default Analisi;
