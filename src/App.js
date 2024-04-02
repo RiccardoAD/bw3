@@ -1,35 +1,34 @@
 
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-// import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import FooterProfile from './components/FooterProfile';
-import FooterHomeDx from './components/FooterHomeDX';
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProfilePage from "./components/ProfilePage";
 
 function App() {
   return (
-    <div className="App">
-    <>
-      {/* <BrowserRouter>
-        <LinkNav />
-        <Routes>
-          <Route path="/profile" element={<Main />} />
-          <Route path="/jobs" element={<Jobs />} />
-          <Route path="/profile/:userId" element={<OtherProfile />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/jobsdetails/:jobid" element={<JobsDetails />} />
-        </Routes>
-  
-      </BrowserRouter> */}
-      <FooterHomeDx/>
-      <br/>
-      <FooterProfile />
-    </>
 
-  </div>
+
+       <BrowserRouter>
+  
+        <Routes>
+  
+
+          <Route path="/profile" element={<ProfilePage />}></Route>
+        </Routes>
+
+      
+      <FooterProfile />
+      </BrowserRouter> 
+
+
+
 );
    
     
 
+  
 }
 
 export default App;
