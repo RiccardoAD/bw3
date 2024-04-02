@@ -66,12 +66,11 @@
 }
 
 @media screen and (min-width: 768px) {
-
   #headerCard {
     text-align: left;
     margin: 3.5rem 0.5rem 0.5rem;
   }
-  
+
   #profilePicture {
     position: absolute;
     border-radius: 50%;
@@ -82,10 +81,7 @@
     width: 160px;
     height: 160px;
   }
-  
 }
-
-
 
 .mainBtn {
   background-color: #0966c2;
@@ -129,13 +125,29 @@
 }
 
 .tertiaryBtn:hover {
-  background-color: #EBEBEB;
+  background-color: #ebebeb;
   box-shadow: inset 0px 0px 0px 2px #191919;
 }
 
 .timeAndLocation {
   color: #666666;
   font-size: 0.9rem;
+ margin-top: -0.5rem;
+}
 
+#headerCard .editIcon {
+  position: absolute;
+  right: 1rem;
+  top: 11rem;
+  padding: 8px;
+}
 
+#headerCard .editIcon:hover {
+  background-color: #ebebeb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#otherCards {
+  text-align: left;
 }

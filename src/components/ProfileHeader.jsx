@@ -1,5 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
+import EditPen from "../assets/svg/edit_pen_long.svg"
 
 const ProfileHeader = function () {
     return (
@@ -12,13 +13,17 @@ const ProfileHeader = function () {
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrptuijk8yZC1B_5W0kZGBl9GQHZ6YGNzeYROhsD83nQ&s"></img>
       </div>
       <Card.Body id="headerCard">
-        <h4 className="profileTitle">Nome Cognome</h4>
+        <img src={EditPen} className="editIcon"></img>
+    <h4 className="profileTitle">Nome Cognome</h4>
         <Card.Text>
          Sottotitolo per la professione
         </Card.Text>
         <p className="timeAndLocation">Località se dinamica • <a href="">Informazioni di contatto</a></p>
+      
+  
+        
         <button className="mainBtn">Disponibile per</button>
-        <button className="secondaryBtn">Disponibile per</button>
+        <button className="secondaryBtn">Profilo</button>
         <button className="tertiaryBtn">Altro</button>
       </Card.Body>
     </Card>
