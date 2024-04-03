@@ -127,7 +127,7 @@ const ExperienceComponent = function () {
 
                 {/* PULSANTE EDIT CON LINK ALLA PAGINA ESPERIENZE CHE SI MOSTRA SOLO NELLA PAGINA PROFILE */}
                 {!params.userId && (
-                  <Link to="/profile/experiences">
+                  <Link to="/profile/experiences/:userId">
                     <img src={EditPen} className="editIcon" style={{ position: "absolute", top: "1rem" }} />
                   </Link>
                 )}
