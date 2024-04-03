@@ -1,12 +1,10 @@
 html,
 .App {
-  background-color:rgb(244, 242, 238) ;
+  background-color: white;
   overflow-x: clip;
 }
-h5 {
-  margin-bottom: 0px;
-}
-p {
+
+.footer p {
   color: #3b3b3b;
 }
 

@@ -24,7 +24,7 @@ const LinkedInNavbar = () => {
             <FormControl
               type="text"
               placeholder="Cerca"
-              className="pe-5 me-2"
+              className="pe-5 me-2 mb-0"
               style={{ width: "350px", backgroundColor: "rgb(238, 243, 249)" }}
             />
           </Form>
