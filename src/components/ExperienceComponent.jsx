@@ -1,17 +1,28 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import EditPen from "../assets/svg/edit_pen_long.svg";
 import AddIcon from "../assets/svg/add_icon.svg";
 import RightArrow from "../assets/svg/right_arrow_icon.svg";
 import CompanyIcon from "../assets/company_icon.png";
 import { Link, useParams } from "react-router-dom";
-
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProfile } from "../redux/actions";
 
 const ExperienceComponent = function () {
+  /*  FETCH CON REDUX */
+  const profilesArray = useSelector((state) => state.profile.profiles);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProfile());
+  }, []);
+
+  console.log("PROVA STATO REDUX", profilesArray);
+
   /*  PARAMS CHE VERRANNO AGGIORNATI CON L'USERID DELLA FETCH */
   const params = useParams();
   console.log("PARAMS", params);
