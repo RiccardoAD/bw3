@@ -164,4 +164,24 @@ html,
   cursor: pointer;
 }
 
+/* sezione post e footer home destra  */
+.postImage {
+  width: 50px;
+}
 
+.font-home-destra {
+  font-size: 0.7rem;
+}
+
+.commenti-home:hover {
+  background-color: lightgrey;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.altri-post {
+  color: #0966c2;
+  border: solid 2px #0966c2;
+  background-color: #f3f2ee;
+  padding: 5px;
+}

@@ -1,9 +1,10 @@
 import { Row, Col, Container } from "react-bootstrap";
-
+import logo from "../assets/svg/svgexport-1.svg"
 import { CaretDownFill, InfoSquareFill } from "react-bootstrap-icons";
+import GeneratedPost from "./GeneratedPost.jsx";
+import AddPost from "./AddPost.jsx";
 
-
-const FooterHomeDx = () => {
+const HomeAndFooterDx = () => {
   return (
     <Container>
       <Row>
@@ -11,8 +12,10 @@ const FooterHomeDx = () => {
          {/* qui il mini profilo benvenuto */}
         </Col>
         <Col sm={12} md={6} className="pe-0">
-       {/* qui ci vanno i post.
-        */}
+          <AddPost />
+
+         <GeneratedPost /> 
+      
         </Col>
         <Col sm={12} md={3}>
           <div>
@@ -91,14 +94,14 @@ const FooterHomeDx = () => {
                 </div>
                 <div className="d-flex mx-4 justify-content-center mt-3">
                   <img
-                    src="../img/LinkedIn2_Logo.svg.png"
+                    src={logo}
                     x="0"
                     y="0"
                     width="56"
                     height="14"
                     alt="logo2"
                   />
-                  <p className="font-home-destra ms-1">LinkedIn Corporation © 2024</p>
+                  <p className="font-home-destra ms-1 ">LinkedIn Corporation © 2024</p>
                 </div>
               </div>
             </Col>
@@ -109,4 +112,4 @@ const FooterHomeDx = () => {
   );
 };
 
-export default FooterHomeDx;
+export default HomeAndFooterDx;
