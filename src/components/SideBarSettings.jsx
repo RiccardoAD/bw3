@@ -1,23 +1,26 @@
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
+import EditPen from "../assets/svg/edit_pen_long.svg";
 
 function SideBarSettings() {
   const profileUrl = window.location.href;
   return (
-    <Row className="border rounded bg-light m-2 px-5">
-      <Row className="py-4 border-bottom">
-        <Col xs={12}>
-          <h2 className="fw-bold">Lingua del profilo</h2>
+    <Row className="border rounded bg-white">
+      <Row className="py-2 border-bottom">
+        <Col xs={12} className="d-flex justify-content-between">
+          <p className="fw-bold m-0">Lingua del profilo</p>
+          <img src={EditPen} className="btn p-0"></img>
         </Col>
         <Col xs={12}>
-          <h4>Italiano</h4>
+          <p className="m-0">Italiano</p>
         </Col>
       </Row>
-      <Row className="py-4">
-        <Col xs={12}>
-          <h2 className="fw-bold">Profilo pubblico e URL</h2>
+      <Row className="py-2">
+        <Col xs={12} className="d-flex justify-content-between">
+          <p className="fw-bold m-0">Profilo pubblico e URL</p>
+          <img src={EditPen} className="btn p-0"></img>
         </Col>
         <Col xs={12}>
-          <h4>{profileUrl}</h4>
+          <p className="m-0">{profileUrl}</p>
         </Col>
       </Row>
     </Row>

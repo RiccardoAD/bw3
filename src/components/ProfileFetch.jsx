@@ -3,23 +3,23 @@ import { Row, Col, Image, Button } from "react-bootstrap";
 
 function ProfileFetch({ profileData }) {
   return (
-    <Col xs={12} className="gy-4 border-bottom px-5">
+    <Col xs={12} className="gy-3 border-bottom">
       <Row>
-        <Col xs={1}>
+        <Col xs={3}>
           <Image src={profileData.image} className="rounded-circle img-fluid" />
         </Col>
-        <Col xs={11} className="pb-3">
-          <h2 className="fw-bold">
+        <Col xs={9} className="pb-2">
+          <p className="fw-bold m-0">
             {profileData.name} {profileData.surname}
-          </h2>
-          <h4>{profileData.title}</h4>
+          </p>
+          <p className="m-0">{profileData.title}</p>
         </Col>
       </Row>
-      <Row className="pb-5">
-        <Col xs={1}></Col>
-        <Col xs={11}>
-          <Button type="button" className="btn btn-light btn-outline-secondary rounded-pill">
-            <h3 className="py-1 px-2">Collegati</h3>
+      <Row className="pb-3">
+        <Col xs={3}></Col>
+        <Col xs={9}>
+          <Button type="button" className="btn bg-white btn-outline-secondary rounded-pill">
+            <p className="m-0 pb-1 px-2">Collegati</p>
           </Button>
         </Col>
       </Row>

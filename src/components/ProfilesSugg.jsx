@@ -15,20 +15,24 @@ function ProfilesSugg() {
   console.log("Profiles:", tuttiIProfili);
 
   return (
-    <Row className="border rounded bg-light m-2">
-      <Col xs={12} className="pt-5 px-5">
-        <h2 className="fw-bold">Persone che potresti conoscere</h2>
-      </Col>
-      <Col xs={12} className="px-5">
-        <h4>Dalla tua azienda</h4>
-      </Col>
-      {tuttiIProfili.slice(0, 5).map((unProfilo) => (
-        <ProfileFetch key={unProfilo._id} profileData={unProfilo} />
-      ))}
-      <Col xs={12} className="text-center p-0">
-        <Button className="btn bg-light w-100 text-secondary fw-bold fs-2 p-5 border-0 border-top">Mostra tutto</Button>
-      </Col>
-    </Row>
+    <>
+      <Row className="border border-bottom-0 rounded-top bg-white px-4">
+        <Col xs={12} className="pt-4">
+          <p className="fw-bold m-0">Persone che potresti conoscere</p>
+        </Col>
+        <Col xs={12}>
+          <p className="m-0">Dalla tua azienda</p>
+        </Col>
+        {tuttiIProfili.slice(0, 5).map((unProfilo) => (
+          <ProfileFetch key={unProfilo._id} profileData={unProfilo} />
+        ))}
+      </Row>
+      <Row>
+        <Col xs={12} className="text-center p-0 border border-top-0 rounded-bottom">
+          <Button className="btn bg-white w-100 text-secondary fw-bold fs-6 border-0">Mostra tutto</Button>
+        </Col>
+      </Row>
+    </>
   );
 }
 

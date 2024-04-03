@@ -1,60 +1,73 @@
 import { Row, Col, Image, Button } from "react-bootstrap";
 import WindstarCruises from "../assets/Windstar_Cruises.jpeg";
 import MysticCruises from "../assets/mystic_cruises_logo.jpeg";
+import AddIcon from "../assets/svg/add_icon.svg";
 
 function Companies() {
   return (
-    <Row className="border rounded bg-light m-2 px-5">
-      <Col xs={12} className="pt-5">
-        <h2 className="fw-bold">Potrebbe interessarti</h2>
-      </Col>
-      <Col xs={12}>
-        <h4 className="fw-bold">Pagine per te</h4>
-      </Col>
-      <Col xs={12} className="gy-4 border-bottom">
-        <Row>
-          <Col xs={1}>
-            <Image src={MysticCruises} className="rounded-circle img-fluid" />
-          </Col>
-          <Col xs={11} className="pb-3">
-            <h2 className="fw-bold">Mystic Cruises</h2>
-            <h4>Organizzazione di viaggi</h4>
-            <h3>51.804 follower</h3>
-          </Col>
-        </Row>
-        <Row className="pb-5">
-          <Col xs={1}></Col>
-          <Col xs={11}>
-            <Button type="button" className="btn btn-light btn-outline-dark rounded-pill">
-              <h3 className="py-1 px-2">Segui</h3>
-            </Button>
-          </Col>
-        </Row>
-      </Col>
-      <Col xs={12} className="gy-4 border-bottom">
-        <Row>
-          <Col xs={1}>
-            <Image src={WindstarCruises} className="rounded-circle img-fluid" />
-          </Col>
-          <Col xs={11} className="pb-3">
-            <h2 className="fw-bold">Windstar Cruises</h2>
-            <h4>Tempo libero, viaggi e turismo</h4>
-            <h3>71.422 follower</h3>
-          </Col>
-        </Row>
-        <Row className="pb-5">
-          <Col xs={1}></Col>
-          <Col xs={11}>
-            <Button type="button" className="btn btn-light btn-outline-dark rounded-pill">
-              <h3 className="py-1 px-2">Segui</h3>
-            </Button>
-          </Col>
-        </Row>
-      </Col>
-      <Col xs={12} className="text-center p-0">
-        <Button className="btn bg-light w-100 text-secondary fw-bold fs-2 p-5 border-0 border-top">Mostra tutto</Button>
-      </Col>
-    </Row>
+    <>
+      <Row className="border border-bottom-0 rounded-top bg-white px-4">
+        <Col xs={12} className="pt-4">
+          <p className="fw-bold m-0">Potrebbe interessarti</p>
+        </Col>
+        <Col xs={12}>
+          <p className="fw-bold m-0">Pagine per te</p>
+        </Col>
+        <Col xs={12} className="gy-2 border-bottom">
+          <Row>
+            <Col xs={3}>
+              <Image src={MysticCruises} className="rounded-circle img-fluid" />
+            </Col>
+            <Col xs={9} className="pb-2">
+              <p className="fw-bold m-0">Mystic Cruises</p>
+              <p className="m-0">Organizzazione di viaggi</p>
+              <p className="m-0">51.804 follower</p>
+            </Col>
+          </Row>
+          <Row className="pb-3">
+            <Col xs={3}></Col>
+            <Col xs={9}>
+              <Button
+                type="button"
+                className="d-flex align-items-center btn bg-white border-2 border-secondary text-secondary  rounded-pill"
+              >
+                <img src={AddIcon} />
+                <p className="pb-1 px-2 m-0 fw-bold">Segui</p>
+              </Button>
+            </Col>
+          </Row>
+        </Col>
+        <Col xs={12} className="gy-2 border-bottom">
+          <Row>
+            <Col xs={3}>
+              <Image src={WindstarCruises} className="rounded-circle img-fluid" />
+            </Col>
+            <Col xs={9} className="pb-2">
+              <p className="fw-bold m-0">Windstar Cruises</p>
+              <p className="m-0">Tempo libero, viaggi e turismo</p>
+              <p className="m-0">71.422 follower</p>
+            </Col>
+          </Row>
+          <Row className="pb-3">
+            <Col xs={3}></Col>
+            <Col xs={9}>
+              <Button
+                type="button"
+                className="d-flex align-items-center btn bg-white border-2 border-secondary text-secondary  rounded-pill"
+              >
+                <img src={AddIcon} />
+                <p className="pb-1 px-2 m-0 fw-bold">Segui</p>
+              </Button>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={12} className="text-center p-0 border border-top-0 rounded-bottom">
+          <Button className="btn bg-white w-100 text-secondary fw-bold fs-6 border-0">Mostra tutto</Button>
+        </Col>
+      </Row>
+    </>
   );
 }
 

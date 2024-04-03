@@ -10,9 +10,9 @@ import ProfileDexSideBar from "./ProfileDexSideBar";
 const ProfilePage = function () {
   return (
     <Container className="mt-5">
-      <Row className="d-flex">
+      <Row className="d-flex pt-4">
         <Col className="col-md-6 col-lg-8">
-          <Row>
+          <Row className="gy-2">
             <Col className="col-12">
               <ProfileHeader />
             </Col>
