@@ -3,7 +3,7 @@ import { QuestionCircleFill, GearFill, ShieldShaded, CaretDownFill } from "react
 
 const FooterProfile = () => {
   return (
-    <Container className="my-3">
+    <Container className="my-3 footer">
       <Row>
         <Col lg={2}>
           <ListGroup>
