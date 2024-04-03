@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css"; // Importa lo stile di Bootstrap
 function ParteSinistraHome() {
   return (
     <div className="container position-relative">
-      {/* Immagine di copertina */}
+      {/* Prima card */}
       <div className="card bg-white border border-secondary" style={{ width: "300px" }}>
         <img
           src="https://cdn.create.vista.com/downloads/b2be2cb4-8abc-452e-b2a4-df3189cc2756_640.jpeg"
@@ -30,6 +30,30 @@ function ParteSinistraHome() {
           <p className="text-left font-weight-bold mt-0">Riattiva Premium con il 50 % di sconto </p>
           <hr className="bg-light" /> {/* Riga grigia */}
           <p className="text-left font-weight-bold mt-0">I miei elementi</p>
+        </div>
+      </div>
+
+      {/* Seconda card con contenuti diversi */}
+      <div className="card bg-white border border-secondary mt-4" style={{ width: "300px" }}>
+        {/* Contenuti della seconda card */}
+        <div className="card-body ">
+          <p className="text-left font-weight-bold mt-0">Recenti</p>
+          <p className="text-left text-muted mb-0">Start up & PMI</p>
+          <p className="text-left text-muted mb-0">Reti di imprese</p>
+          <p className="text-left text-muted mb-0">digichamps</p>
+          <p className="text-left text-muted mb-0">Digital marketing</p>
+          <p className="text-left -bold mt-4 text-primary">Gruppi</p>
+          <p className="text-left text-muted mb-0">Start up & PMI</p>
+          <p className="text-left text-muted mb-0">Reti di imprese</p>
+          <p className="text-left text-muted mb-0">digichamps</p>
+          <p className="text-left text-muted mb-0">Digital marketing</p>
+          <p className="text-left -bold mt-4 text-primary">Eventi</p>
+          <p className="text-left -bold mt-0 text-primary">Hastag seguiti</p>
+          <p className="text-left text-muted mb-0">marketing</p>
+          <p className="text-left text-muted mb-0">sviluppo web</p>
+          <p className="text-left text-muted mb-0">digital marketing</p>
+          <hr className="bg-light" /> {/* Riga grigia */}
+          <p className="card-text text-center text-muted">Scopri di più</p>
         </div>
       </div>
     </div>
