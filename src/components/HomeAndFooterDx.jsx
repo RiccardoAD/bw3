@@ -1,9 +1,10 @@
 import { Row, Col, Container } from "react-bootstrap";
 import logo from "../assets/svg/svgexport-1.svg"
 import { CaretDownFill, InfoSquareFill } from "react-bootstrap-icons";
+import GeneratedPost from "./GeneratedPost.jsx";
+import AddPost from "./AddPost.jsx";
 
-
-const FooterHomeDx = () => {
+const HomeAndFooterDx = () => {
   return (
     <Container>
       <Row>
@@ -11,8 +12,10 @@ const FooterHomeDx = () => {
          {/* qui il mini profilo benvenuto */}
         </Col>
         <Col sm={12} md={6} className="pe-0">
-       {/* qui ci vanno i post.
-        */}
+          <AddPost />
+
+         <GeneratedPost /> 
+      
         </Col>
         <Col sm={12} md={3}>
           <div>
@@ -109,4 +112,4 @@ const FooterHomeDx = () => {
   );
 };
 
-export default FooterHomeDx;
+export default HomeAndFooterDx;
