@@ -3,7 +3,7 @@ import ProfileHeader from "./ProfileHeader";
 import Analisi from "./Analisi";
 import Risorse from "./Risorse";
 import Informazioni from "./Informazioni";
-import Esperienza from "./Esperienza";
+import ExperienceComponent from "./ExperienceComponent";
 import Formazione from "./Formazione";
 import ProfileDexSideBar from "./ProfileDexSideBar";
 
@@ -16,19 +16,19 @@ const ProfilePage = function () {
             <Col className="col-12">
               <ProfileHeader />
             </Col>
-            <Col className="col-12">
+            <Col className="col-12 my-3">
               <Analisi />
             </Col>
-            <Col className="col-12">
+            <Col className="col-12 my-3">
               <Risorse />
             </Col>
-            <Col className="col-12">
+            <Col className="col-12 my-3">
               <Informazioni />
             </Col>
-            <Col className="col-12">
-              <Esperienza />
+            <Col className="col-12 my-3">
+              <ExperienceComponent />
             </Col>
-            <Col className="col-12">
+            <Col className="col-12 my-3">
               <Formazione />
             </Col>
           </Row>
