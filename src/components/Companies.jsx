@@ -31,8 +31,8 @@ function Companies() {
                 type="button"
                 className="d-flex align-items-center btn bg-white border-2 border-secondary text-secondary  rounded-pill"
               >
-                <img src={AddIcon} />
-                <p className="pb-1 px-2 m-0 fw-bold">Segui</p>
+                <img src={AddIcon} width={20} />
+                <p className="px-1 m-0 fw-bold">Segui</p>
               </Button>
             </Col>
           </Row>
@@ -55,8 +55,8 @@ function Companies() {
                 type="button"
                 className="d-flex align-items-center btn bg-white border-2 border-secondary text-secondary  rounded-pill"
               >
-                <img src={AddIcon} />
-                <p className="pb-1 px-2 m-0 fw-bold">Segui</p>
+                <img src={AddIcon} width={20} />
+                <p className="px-1 m-0 fw-bold">Segui</p>
               </Button>
             </Col>
           </Row>

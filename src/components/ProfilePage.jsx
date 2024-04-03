@@ -11,7 +11,7 @@ const ProfilePage = function () {
   return (
     <Container className="mt-5">
       <Row className="d-flex pt-4">
-        <Col className="col-md-6 col-lg-8">
+        <Col className="col-md-7 col-lg-8 xxl-9">
           <Row className="gy-2">
             <Col className="col-12">
               <ProfileHeader />
@@ -33,7 +33,7 @@ const ProfilePage = function () {
             </Col>
           </Row>
         </Col>
-        <Col className="col-md-6 col-lg-4 d-none d-md-block">
+        <Col className="col-md-5 col-lg-4 xxl-3 d-none d-md-block">
           <ProfileDexSideBar />
         </Col>
       </Row>
