@@ -35,9 +35,9 @@ const ProfileHeader = function () {
         <Card style={{ position: "relative" }}>
           {profileData && (
             <>
-              <Card.Img variant="top" style={{ height: "10rem" }} src={profileData.image} />
+              <Card.Img variant="top" style={{ height: "10rem" }} src={profileData.image} className="img-fluid" />
               <div id="profilePicture">
-                <img src={profileData.image} alt="Profile" />
+                <img src={profileData.image} alt="Profile" className="img-fluid" />
               </div>
               <Card.Body id="headerCard">
                 <img src={EditPen} className="editIcon" alt="Edit Pen Icon" />
