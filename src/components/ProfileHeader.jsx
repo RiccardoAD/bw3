@@ -32,7 +32,9 @@ const ProfileHeader = function () {
 
     setValidated(true);
 
-    /*  Il reset dei campi funziona solo se non controllo la validità dei campi, per questo per ora è commentato
+    /*  Il reset dei campi funziona solo se non controllo la validità dei campi,
+    per questo per ora è commentato
+
    handleReset();
    handleClose();
   */
@@ -55,7 +57,7 @@ const ProfileHeader = function () {
 
             <Modal show={show} onHide={handleClose} size="lg">
               <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
+                <Modal.Title>Modifica Profilo</Modal.Title>
               </Modal.Header>
 
               <Modal.Body>
@@ -79,7 +81,7 @@ const ProfileHeader = function () {
                     <Form.Control required type="text" placeholder="Scrivi qui il tuo username" />
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="biografia">
-                    <Form.Label>Raccontaci di te:</Form.Label>
+                    <Form.Label>Raccontaci di te</Form.Label>
                     <Form.Control required as="textarea" rows={3} />
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="professione">

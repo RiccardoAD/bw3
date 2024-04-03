@@ -4,8 +4,12 @@ import EditPen from "../assets/svg/edit_pen_long.svg";
 import AddIcon from "../assets/svg/add_icon.svg";
 import RightArrow from "../assets/svg/right_arrow_icon.svg";
 import CompanyIcon from "../assets/company_icon.png";
+import { Link, useParams } from "react-router-dom";
 
-const Esperienza = function () {
+const ExperienceComponent = function () {
+  const params = useParams();
+  console.log("PARAMS", params);
+
   return (
     <Row>
       <Col>
@@ -13,12 +17,18 @@ const Esperienza = function () {
           <div id="otherCards">
             <Row>
               <Col>
-                <img
-                  src={AddIcon}
-                  className="editIcon"
-                  style={{ position: "absolute", top: "1rem", right: "4rem" }}
-                ></img>
-                <img src={EditPen} className="editIcon" style={{ position: "absolute", top: "1rem" }}></img>
+                {params.userId && (
+                  <img
+                    src={AddIcon}
+                    className="editIcon"
+                    style={{ position: "absolute", top: "1rem", right: "4rem" }}
+                  ></img>
+                )}
+
+                <Link to="/profile/experiences">
+                  {" "}
+                  <img src={EditPen} className="editIcon" style={{ position: "absolute", top: "1rem" }} />{" "}
+                </Link>
                 <h5 className="fw-bold pb-2">Esperienza</h5>
               </Col>
             </Row>
@@ -66,4 +76,4 @@ const Esperienza = function () {
   );
 };
 
-export default Esperienza;
+export default ExperienceComponent;
