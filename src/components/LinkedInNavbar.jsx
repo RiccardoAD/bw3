@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navbar, Nav, Form, FormControl, Dropdown } from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl, Dropdown, Container } from "react-bootstrap";
 import linkedinLogo from "../assets/logo.png";
 
 const LinkedInNavbar = () => {
@@ -10,26 +10,29 @@ const LinkedInNavbar = () => {
   const toggleAziendeDropdown = () => setAziendeDropdownOpen(!aziendeDropdownOpen);
 
   return (
-    <div>
-      <Navbar bg="white" expand="lg" className="custom-navbar fixed-top">
+    <Navbar expand="lg" className="custom-navbar fixed-top bg-white">
+      <Container className="d-flex justify-content-between">
         <Navbar.Brand href="#home" className="d-flex align-items-center">
           <img
             src={linkedinLogo}
             width="30"
             height="30"
-            className="d-inline-block align-top linkedin-logo"
+            className="d-inline-block align-top me-3"
             alt="LinkedIn Logo"
           />
           <Form inline>
-            <FormControl type="text" placeholder="Cerca" className="mr-sm-2 search-field" />
+            <FormControl
+              type="text"
+              placeholder="Cerca"
+              className="pe-5 me-2"
+              style={{ width: "350px", backgroundColor: "rgb(238, 243, 249)" }}
+            />
           </Form>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
-          <Nav className="mr-auto nav-spacer">
-            <Nav.Link href="#home" className="home-link">
-              Home
-            </Nav.Link>
+        <Navbar.Collapse className="justify-content-between">
+          <Nav className="gap-5">
+            <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#network">Rete</Nav.Link>
             <Nav.Link href="#jobs">Lavoro</Nav.Link>
             <Nav.Link href="#messaging">Messagistica</Nav.Link>
@@ -42,10 +45,10 @@ const LinkedInNavbar = () => {
                   <div className="profile-info-container">
                     {/* Spazio rotondo */}
                     <div className="profile-pic-container">
-                      <div className="profile-pic-placeholder"></div>
+                      <div className="p-4 bg-secondary rounded-circle"></div>
                     </div>
                     {/* Nome e cognome */}
-                    <div className="profile-details">
+                    <div className="profile-details pt-3">
                       <h5 className="profile-name">Nome e cognome</h5>
                       <p className="profile-role">Ruolo professionale</p>
                     </div>
@@ -82,8 +85,8 @@ const LinkedInNavbar = () => {
             </Dropdown>
           </Nav>
         </Navbar.Collapse>
-      </Navbar>
-    </div>
+      </Container>
+    </Navbar>
   );
 };
 

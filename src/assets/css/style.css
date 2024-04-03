@@ -2,28 +2,28 @@
   margin-left: auto !important;
 } */
 
-.custom-navbar .navbar-collapse {
+/* .custom-navbar .navbar-collapse {
   justify-content: center;
-}
+} */
 
 /* logo */
-.linkedin-logo {
+/* .linkedin-logo {
   margin-left: 181px;
   margin-right: 5px;
-}
+} */
 
 /* voci menù */
-.nav-spacer .nav-link {
+/* .nav-spacer .nav-link {
   margin-right: 15px;
-}
+} */
 
 /* margine sinistro per la voce "Home" */
-.home-link {
+/* .home-link {
   margin-left: -151px;
-}
+} */
 
 /* larghezza search e colore */
-.search-field {
+/* .search-field {
   width: 300px;
   background-color: rgb(238, 243, 249);
 }
@@ -36,7 +36,7 @@
 }
 
 /* spazio rotondo finestra "Tu" */
-.profile-pic-placeholder {
+*/ .profile-pic-placeholder {
   width: 30px;
   height: 30px;
   border-radius: 50%;

@@ -4,6 +4,7 @@ import FooterProfile from "./components/FooterProfile";
 import LinkedInNavbar from "./components/LinkedInNavbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProfilePage from "./components/ProfilePage";
+import "../src/assets/css/style.css";
 
 function App() {
   return (
