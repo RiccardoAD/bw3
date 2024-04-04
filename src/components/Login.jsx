@@ -33,7 +33,7 @@ const Login = () => {
   const userPassword = useSelector((state) => state.user.checkPassword); // true se "ciao"
 
   //La funzione handleLogin è chiamata quando viene cliccato il pulsante "Accedi".
-  // Attualmente, questa funzione semplicemente registra i valori dell'username, della password e dello stato "Ricordami" nella console utilizzando console.log()
+  //Attualmente, questa funzione semplicemente registra i valori dell'username, della password e dello stato "Ricordami" nella console utilizzando console.log()
   const handleLogin = () => {
     // logica per effettuare il login
     console.log("Username:", username);
@@ -44,7 +44,7 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container mt-5 pt-5">
+    <div className="login-container mt-5 pt-5" id="sfondobianco">
       {userPassword === true && navigate("/")}
 
       <div className="login-form">
@@ -103,5 +103,3 @@ const Login = () => {
 };
 
 export default Login;
-
-//---

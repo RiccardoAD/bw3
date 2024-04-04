@@ -17,7 +17,7 @@ import business from "../assets/svg/business.svg";
 
 function LinkedInNavbar() {
   return (
-    <Navbar collapseOnSelect expand="sm" className="flex-xs-row-reverse bg-body-tertiary">
+    <Navbar collapseOnSelect expand="sm" className="flex-xs-row-reverse bg-body-tertiary fixed-top">
       <Container>
         <div className="d-flex align-items-center gap-sm-3">
           <div className="d-flex me-2">

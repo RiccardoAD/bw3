@@ -133,9 +133,9 @@ function ParteSinistraHome() {
             <p className="text-left text-muted mb-0">Digital marketing</p>
             <p className="text-left -bold mt-4 text-primary">Eventi</p>
             <p className="text-left -bold mt-0 text-primary">Hastag seguiti</p>
-            <p className="text-left text-muted mb-0">marketing</p>
-            <p className="text-left text-muted mb-0">sviluppo web</p>
-            <p className="text-left text-muted mb-0">digital marketing</p>
+            <p className="text-left text-muted mb-0">#marketing</p>
+            <p className="text-left text-muted mb-0">#sviluppo web</p>
+            <p className="text-left text-muted mb-0">#digital marketing</p>
           </Col>
         </Row>
         <hr />
