@@ -37,7 +37,7 @@ const GeneratedPost = () => {
             resultsSlice.map((p, index) => (
               <Row key={index} className="bg-white mb-2 rounded border border-secondary-light mx-1">
                 <Col className="d-flex">
-                  <img src={p.image} alt="" className="asideImg rounded-circle mx-2 my-1" />
+                  <img src={p.image} alt="" className="asideImg rounded-circle mx-2 mt-2" />
                   <div>
                     <p className="fw-bold ms-1 mt-1">{p.username}</p>
                     <p className="ms-1 text-secondary">{p.user.title}</p>

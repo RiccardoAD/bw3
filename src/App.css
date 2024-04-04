@@ -165,7 +165,7 @@ html,
   cursor: pointer;
 }
 
-/* sezione post e footer home destra  */
+/* sezione post .parte sinistra  footer home  */
 .postImage {
   width: 50px;
   height: 50px;
@@ -194,3 +194,34 @@ html,
  span{
  font-size: 0.9rem;
  }
+ 
+.profileContainer {
+  border: 1px solid rgb(206, 199, 199);
+  /* bg aggiunto da Mariline */
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.bgProfile {
+  object-fit: cover;
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+
+}
+
+
+#miniProfile img{
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+  margin-left: 7rem;
+}
+
+
+
+
+/* colore backgroundglobale in root */
+#root{
+  background-color: #f3f2ee;
+}
