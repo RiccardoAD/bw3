@@ -1,7 +1,6 @@
 import { Row, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import EditPen from "../assets/svg/edit_pen_long.svg";
-import AddIcon from "../assets/svg/add_icon.svg";
 import RightArrow from "../assets/svg/right_arrow_icon.svg";
 import CompanyIcon from "../assets/company_icon.png";
 import { Link, useParams } from "react-router-dom";
@@ -10,28 +9,52 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProfile } from "../redux/actions";
+import { profileMeAct } from "../redux/actions/profileMeAct";
+import AddExpModal from "./AddExpModal";
 
 const ExperienceComponent = function () {
   /*  FETCH CON REDUX */
-  const profilesArray = useSelector((state) => state.profile.profiles);
+  const profileData = useSelector((state) => state.profileMeRed.profileData);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchProfile());
-  }, []);
+  // HOOK ESPERIENZE
+  const [experiences, setExperiences] = useState([]);
 
-  console.log("PROVA STATO REDUX", profilesArray);
+  useEffect(() => {
+    dispatch(profileMeAct());
+  }, [dispatch]);
+
+  console.log("PROVA STATO REDUX", profileData);
+
+  useEffect(() => {
+    if (profileData) {
+      fetchExperiences(profileData._id);
+    }
+  }, [profileData]);
+
+  const fetchExperiences = async (userId) => {
+    try {
+      const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`, {
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzlhYWEyODFkODAwMTlhM2VjNTciLCJpYXQiOjE3MTIwNDg1NTQsImV4cCI6MTcxMzI1ODE1NH0.6sHKqviDfFSd8qv2L8aNnu7plOcEuiqkhnhPbe72vKw",
+        },
+      });
+      if (!response.ok) {
+        throw new Error("Failed to fetch user experiences");
+      }
+      const experiencesData = await response.json();
+      setExperiences(experiencesData);
+    } catch (error) {
+      console.error("Error fetching user experiences:", error);
+    }
+  };
 
   /*  PARAMS CHE VERRANNO AGGIORNATI CON L'USERID DELLA FETCH */
   const params = useParams();
   console.log("PARAMS", params);
 
   /* STATO E FUNZIONI PER IL MODALE D'AGGIUNTA  */
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   /* STATO E FUNZIONI PER IL MODALE DI MODIFICA  */
   const [appear, setAppear] = useState(false);
@@ -74,71 +97,13 @@ const ExperienceComponent = function () {
             <Row>
               <Col>
                 {/*  PULSANTE "+" E MODALE D'AGGIUNTA CHE SI MOSTRA SOLO NELLA PAGINA DI MODIFICA */}
-                {params.userId && (
-                  <>
-                    <img
-                      src={AddIcon}
-                      className="editIcon"
-                      style={{ position: "absolute", top: "1rem", right: "1.8rem" }}
-                      onClick={handleShow}
-                    ></img>
-
-                    <Modal show={show} onHide={handleClose} size="lg">
-                      <Modal.Header closeButton>
-                        <Modal.Title>Aggiungi Esperienza</Modal.Title>
-                      </Modal.Header>
-
-                      <Modal.Body>
-                        {/*   INIZIO FORM PER AGGIUNGERE POSIZIONE LAVORATIVA */}
-
-                        <Form ref={formRef} noValidate validated={validated} onSubmit={handleSubmit}>
-                          <Form.Group className="mb-3" controlId="posizione lavorativa">
-                            <Form.Label>Posizione lavorativa</Form.Label>
-                            <Form.Control required type="text" placeholder="Scrivi qui la tua posizione lavorativa" />
-                          </Form.Group>
-                          <Form.Group className="mb-3" controlId="compagnia">
-                            <Form.Label>Compagnia</Form.Label>
-                            <Form.Control
-                              required
-                              type="text"
-                              placeholder="Scrivi qui la compagnia per cui hai lavorato"
-                            />
-                          </Form.Group>
-
-                          <Form.Group className="mb-3" controlId="data di inizio">
-                            <Form.Label>Data di Inizio</Form.Label>
-                            <Form.Control required type="text" placeholder="Scrivi qui la tua data di inizio" />
-                          </Form.Group>
-
-                          <Form.Group className="mb-3" controlId="data conclusione">
-                            <Form.Label>Data Conclusione</Form.Label>
-                            <Form.Control required type="text" placeholder="Scrivi qui la scadenza del tuo contratto" />
-                          </Form.Group>
-                          <Form.Group className="mb-3" controlId="area geografica">
-                            <Form.Label>Area Geografica</Form.Label>
-                            <Form.Control required type="text" placeholder="Scrivi qui la tua area geografica" />
-                          </Form.Group>
-                        </Form>
-
-                        {/*     FINE FORM
-                         */}
-                      </Modal.Body>
-                      <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                          Close
-                        </Button>
-                        <Button type="submit" variant="primary" onClick={handleSubmit}>
-                          Save Changes
-                        </Button>
-                      </Modal.Footer>
-                    </Modal>
-                  </>
-                )}
+                {params.userId && profileData && <AddExpModal userId={profileData._id} />}
                 {/* FINE MODALE D'AGGIUNTA */}
 
                 {/* PULSANTE EDIT CON LINK ALLA PAGINA ESPERIENZE CHE SI MOSTRA SOLO NELLA PAGINA PROFILE */}
-                {!params.userId && (
-                  <Link to="/profile/experiences/:userId">
+
+                {!params.userId && profileData && (
+                  <Link to={`/profile/experiences/${profileData._id}`}>
                     <img src={EditPen} className="editIcon" style={{ position: "absolute", top: "1rem" }} />
                   </Link>
                 )}
@@ -150,81 +115,83 @@ const ExperienceComponent = function () {
             </Row>
 
             {/* ESPERIENZE STATICHE DA MAPPARE NON APPENA ABBIAMO LA FECTH: */}
-            <Row className=" border-bottom py-3" style={{ position: "relative" }}>
-              <Col className="col-2 col-lg-1">
-                {params.userId && (
-                  <>
-                    <img
-                      src={EditPen}
-                      className="editIcon"
-                      style={{ position: "absolute", top: "0.5rem", right: "1rem" }}
-                      onClick={handleAppear}
-                    />
+            {experiences.map((experience) => (
+              <Row key={experience._id} className="border-bottom py-3" style={{ position: "relative" }}>
+                <Col className="col-2 col-lg-1">
+                  {params.userId && (
+                    <>
+                      <img
+                        src={EditPen}
+                        className="editIcon"
+                        style={{ position: "absolute", top: "0.5rem", right: "1rem" }}
+                        onClick={handleAppear}
+                      />
 
-                    <Modal show={appear} onHide={handleDisappear} size="lg">
-                      <Modal.Header closeButton>
-                        <Modal.Title>Modifica Esperienza</Modal.Title>
-                      </Modal.Header>
+                      <Modal show={appear} onHide={handleDisappear} size="lg">
+                        <Modal.Header closeButton>
+                          <Modal.Title>Modifica Esperienza</Modal.Title>
+                        </Modal.Header>
 
-                      <Modal.Body>
-                        {/*   INIZIO FORM PER MODIFICARE POSIZIONE LAVORATIVA */}
+                        <Modal.Body>
+                          {/*   INIZIO FORM PER MODIFICARE POSIZIONE LAVORATIVA */}
 
-                        <Form ref={formRef} noValidate validated={validated} onSubmit={handleSubmit}>
-                          <Form.Group className="mb-3" controlId="posizione lavorativa">
-                            <Form.Label>Posizione lavorativa</Form.Label>
-                            <Form.Control required type="text" placeholder="Scrivi qui la tua posizione lavorativa" />
-                          </Form.Group>
-                          <Form.Group className="mb-3" controlId="compagnia">
-                            <Form.Label>Compagnia</Form.Label>
-                            <Form.Control
-                              required
-                              type="text"
-                              placeholder="Scrivi qui la compagnia per cui hai lavorato"
-                            />
-                          </Form.Group>
+                          <Form ref={formRef} noValidate validated={validated} onSubmit={handleSubmit}>
+                            <Form.Group className="mb-3" controlId="posizione lavorativa">
+                              <Form.Label>Posizione lavorativa</Form.Label>
+                              <Form.Control required type="text" placeholder="Scrivi qui la tua posizione lavorativa" />
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="compagnia">
+                              <Form.Label>Compagnia</Form.Label>
+                              <Form.Control
+                                required
+                                type="text"
+                                placeholder="Scrivi qui la compagnia per cui hai lavorato"
+                              />
+                            </Form.Group>
 
-                          <Form.Group className="mb-3" controlId="data di inizio">
-                            <Form.Label>Data di Inizio</Form.Label>
-                            <Form.Control required type="text" placeholder="Scrivi qui la tua data di inizio" />
-                          </Form.Group>
+                            <Form.Group className="mb-3" controlId="data di inizio">
+                              <Form.Label>Data di Inizio</Form.Label>
+                              <Form.Control required type="text" placeholder="Scrivi qui la tua data di inizio" />
+                            </Form.Group>
 
-                          <Form.Group className="mb-3" controlId="data conclusione">
-                            <Form.Label>Data Conclusione</Form.Label>
-                            <Form.Control required type="text" placeholder="Scrivi qui la scadenza del tuo contratto" />
-                          </Form.Group>
-                          <Form.Group className="mb-3" controlId="area geografica">
-                            <Form.Label>Area Geografica</Form.Label>
-                            <Form.Control required type="text" placeholder="Scrivi qui la tua area geografica" />
-                          </Form.Group>
-                        </Form>
+                            <Form.Group className="mb-3" controlId="data conclusione">
+                              <Form.Label>Data Conclusione</Form.Label>
+                              <Form.Control
+                                required
+                                type="text"
+                                placeholder="Scrivi qui la scadenza del tuo contratto"
+                              />
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="area geografica">
+                              <Form.Label>Area Geografica</Form.Label>
+                              <Form.Control required type="text" placeholder="Scrivi qui la tua area geografica" />
+                            </Form.Group>
+                          </Form>
 
-                        {/*     FINE FORM
-                         */}
-                      </Modal.Body>
-                      <Modal.Footer>
-                        <Button variant="secondary" onClick={handleDisappear}>
-                          Close
-                        </Button>
-                        <Button type="submit" variant="primary" onClick={handleSubmit}>
-                          Save Changes
-                        </Button>
-                      </Modal.Footer>
-                    </Modal>
-                  </>
-                )}
+                          {/*     FINE FORM
+                           */}
+                        </Modal.Body>
+                        <Modal.Footer>
+                          <Button variant="secondary" onClick={handleDisappear}>
+                            Close
+                          </Button>
+                          <Button type="submit" variant="primary" onClick={handleSubmit}>
+                            Save Changes
+                          </Button>
+                        </Modal.Footer>
+                      </Modal>
+                    </>
+                  )}
 
-                <img src={CompanyIcon} style={{ width: "50px" }}></img>
-              </Col>
-              <Col>
-                <p className="fw-bold">Mansione</p>
-                <p className="timeAndLocation">Periodo</p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, dolor alias quaerat, dolore quam amet
-                  dicta perspiciatis quas excepturi, repellendus facere quos? Incidunt sed minus vero optio laborum
-                  architecto eveniet.
-                </p>
-              </Col>
-            </Row>
+                  <img src={CompanyIcon} style={{ width: "50px" }} alt="Company Logo"></img>
+                </Col>
+                <Col>
+                  <p className="fw-bold">{experience.role}</p>
+                  <p className="timeAndLocation">{`${experience.startDate} - ${experience.endDate || "Present"}`}</p>
+                  <p>{experience.description}</p>
+                </Col>
+              </Row>
+            ))}
           </div>
 
           {!params.userId && (

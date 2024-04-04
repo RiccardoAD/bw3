@@ -1,13 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Row, Col } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import Card from "react-bootstrap/Card";
 import EditPen from "../assets/svg/edit_pen_long.svg";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { profileMeAct } from "../redux/actions/profileMeAct";
 
 const ProfileHeader = function () {
-  const [profileData, setProfileData] = useState(null);
+  const dispatch = useDispatch();
+  const profileData = useSelector((state) => state.profileMeRed.profileData);
   const [formData, setFormData] = useState({
     name: "",
     surname: "",
@@ -30,30 +33,14 @@ const ProfileHeader = function () {
   const formRef = useRef(null);
 
   useEffect(() => {
-    const fetchProfileData = async () => {
-      try {
-        const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzlhYWEyODFkODAwMTlhM2VjNTciLCJpYXQiOjE3MTIwNDg1NTQsImV4cCI6MTcxMzI1ODE1NH0.6sHKqviDfFSd8qv2L8aNnu7plOcEuiqkhnhPbe72vKw",
-          },
-        });
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
-        console.log("il mio profilo", data);
-        setProfileData(data);
-        console.log("dati fetch", profileData);
-        setFormData(data);
-        console.log("dati form", formData);
-      } catch (error) {
-        console.error("Error fetching profile data:", error);
-      }
-    };
+    dispatch(profileMeAct());
+  }, [dispatch]);
 
-    fetchProfileData();
-  }, []);
+  useEffect(() => {
+    if (profileData) {
+      setFormData(profileData);
+    }
+  }, [profileData]);
 
   const handleReset = () => {
     formRef.current.reset();
