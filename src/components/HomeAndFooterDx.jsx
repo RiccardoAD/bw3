@@ -7,10 +7,10 @@ import ParteSinistraHome from "./ParteSinistraHome.jsx";
 
 const HomeAndFooterDx = () => {
   return (
-    <Container className="mt-5 sfondo">
+    <Container className="sfondo">
       <Row className="pt-4">
         <Col sm={12} md={3}>
-          <ParteSinistraHome/>
+          <ParteSinistraHome />
         </Col>
         <Col sm={12} md={6} className="pe-0">
           <AddPost />

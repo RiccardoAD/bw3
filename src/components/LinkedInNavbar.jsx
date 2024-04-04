@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -14,8 +15,17 @@ import work from "../assets/svg/work.svg";
 import message from "../assets/svg/message.svg";
 import campana from "../assets/svg/campana.svg";
 import business from "../assets/svg/business.svg";
+import { profileMeAct } from "../redux/actions/profileMeAct";
+import { useDispatch, useSelector } from "react-redux";
 
 function LinkedInNavbar() {
+  const dispatch = useDispatch();
+  const profileData = useSelector((state) => state.profileMeRed.profileData);
+
+  useEffect(() => {
+    dispatch(profileMeAct());
+  }, [dispatch]);
+
   return (
     <Navbar collapseOnSelect expand="sm" className="flex-xs-row-reverse bg-body-tertiary fixed-top">
       <Container>
@@ -87,30 +97,34 @@ function LinkedInNavbar() {
           <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-start gap-2 ms-4">
             <div className="icons_navbar">
               <div className="d-flex justify-content-center ">
-                <img
-                  src="https://media.licdn.com/dms/image/D4D03AQHHUaLzX3d56A/profile-displayphoto-shrink_800_800/0/1669228931357?e=2147483647&v=beta&t=2PFYbE3U9WlVkg80VlHOSrpAqJe3dk9ybmIofCnnPn0"
-                  alt="profile_picture"
-                  width={"25px"}
-                  height={"25px"}
-                  className="image_dropdown_navbar object-fit-cover"
-                />
+                <Link to={"/profile"}>
+                  <img
+                    src={profileData.image}
+                    alt="profile_picture"
+                    width={"25px"}
+                    height={"25px"}
+                    className="image_dropdown_navbar object-fit-cover"
+                  />
+                </Link>
               </div>
 
               <NavDropdown title="Me" id="collapsible-nav-dropdown" className="p-0 dropdown-menu-left">
                 <div style={{ width: "18rem" }} className="dropdown-menu-right">
                   <div className="px-2">
                     <img
-                      src="https://media.licdn.com/dms/image/D4D03AQHHUaLzX3d56A/profile-displayphoto-shrink_800_800/0/1669228931357?e=2147483647&v=beta&t=2PFYbE3U9WlVkg80VlHOSrpAqJe3dk9ybmIofCnnPn0"
+                      src={profileData.image}
                       alt="draft_picture"
                       width="30px"
                       height={"30px"}
                       className="image_dropdown_navbar object-fit-cover"
                     />
                     <div>
-                      <p className="fw-semibold">Sara Ferrantini</p>
-                      <p>Full Stack Developer</p>
+                      <p className="fw-semibold">
+                        {profileData.name} {profileData.surname}
+                      </p>
+                      <p>{profileData.bio}</p>
 
-                      <MyButton text={"Visualizza Profilo"} colore={"primary"} link={"/Profilo"}></MyButton>
+                      <MyButton text={"Visualizza Profilo"} colore={"primary"} link={"/Profile"}></MyButton>
                     </div>
                   </div>
                 </div>
