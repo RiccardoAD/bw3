@@ -10,7 +10,7 @@ import FooterProfile from "./FooterProfile";
 
 const ProfilePage = function () {
   return (
-    <Container>
+    <Container className="mt-5">
       <Row className="d-flex pt-4">
         <Col className="col-md-7 col-lg-8 xxl-9">
           <Row className="gy-2">
