@@ -8,9 +8,21 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { profileMeAct } from "../redux/actions/profileMeAct";
 
+import { putImg } from "../redux/actions/images";
+
 const ProfileHeader = function () {
+
+  const [avatar, setAvatar] = useState(null);
+
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setAvatar(file);
+};
+
   const dispatch = useDispatch();
   const profileData = useSelector((state) => state.profileMeRed.profileData);
+  
   const [formData, setFormData] = useState({
     name: "",
     surname: "",
@@ -42,12 +54,14 @@ const ProfileHeader = function () {
     }
   }, [profileData]);
 
-  const handleReset = () => {
-    formRef.current.reset();
-    setValidated(false);
-  };
 
   const handleSubmit = async (event) => {
+    const formData = new FormData();
+    formData.append("profile", avatar);
+    dispatch(putImg(profileData._id, formData));
+
+
+
     const form = event.currentTarget;
 
     if (form.checkValidity() === false) {
@@ -80,6 +94,7 @@ const ProfileHeader = function () {
       }
       const updatedProfileData = await response.json();
       console.log("Profile updated successfully:", updatedProfileData);
+     
       setFormData(updatedProfileData);
       handleClose();
       window.location.reload();
@@ -94,7 +109,7 @@ const ProfileHeader = function () {
         <Card style={{ position: "relative" }}>
           {profileData && (
             <>
-              <Card.Img variant="top" style={{ height: "10rem" }} src={profileData.image} className="img-fluid" />
+              <Card.Img variant="top" style={{ height: "10rem", backgroundColor: "black"}} className="img-fluid" />
               <div id="profilePicture">
                 <img src={profileData.image} alt="Profile" className="img-fluid" />
               </div>
@@ -230,6 +245,18 @@ const ProfileHeader = function () {
                           }
                         />
                       </Form.Group>
+
+                      <Form.Group className="mb-3" controlId="immagine profilo">
+                        <Form.Label>URL immagine profilo</Form.Label>
+                        <Form.Control
+                          required
+                          type="file"
+                          placeholder="Inserisci la tua immagine"
+                          /* value={formData.image} */
+                          id="avatar" accept="image/*" onChange={handleImageChange}
+                        />
+                      </Form.Group>
+
                     </Form>
 
                     {/*     FINE FORM
