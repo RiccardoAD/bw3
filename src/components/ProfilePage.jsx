@@ -17,19 +17,19 @@ const ProfilePage = function () {
             <Col className="col-12">
               <ProfileHeader />
             </Col>
-            <Col className="col-12 my-3">
+            <Col className="col-12">
               <Analisi />
             </Col>
-            <Col className="col-12 my-3">
+            <Col className="col-12">
               <Risorse />
             </Col>
-            <Col className="col-12 my-3">
+            <Col className="col-12">
               <Informazioni />
             </Col>
-            <Col className="col-12 my-3">
+            <Col className="col-12">
               <ExperienceComponent />
             </Col>
-            <Col className="col-12 my-3">
+            <Col className="col-12">
               <Formazione />
             </Col>
           </Row>
