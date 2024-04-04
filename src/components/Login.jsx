@@ -22,20 +22,11 @@ import Alert from "react-bootstrap/Alert";
 //che cambia il valore di rememberMe da false a true o viceversa.
 
 const Login = () => {
-
-
   const dispatch = useDispatch();
-
-
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow =  () => { setShow(true);}
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
-
 
   const userLoggedIn = useSelector((state) => state.user.isLoggedIn); // inizialmente è false
 
@@ -52,33 +43,10 @@ const Login = () => {
     console.log("Remember Me:", rememberMe);
     dispatch(userLoginAction(password));
     console.log("arey the logged in?", userPassword);
-
-    if (userPassword === false) {
-      handleShow();
-    }
-
-    if (userPassword === true) {
-
-    }
   };
 
   return (
     <div className="login-container">
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Password errata!</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Riprova o se non sei ancora dei nostri, registrati!</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
-
       <div className="login-form">
         <img
           src="https://www.salvatorepumo.it/wp-content/uploads/2022/02/logo-linkedin-oggi.png"
@@ -94,7 +62,9 @@ const Login = () => {
           onChange={(e) => setUsername(e.target.value)}
         />
         <p>Password</p>
+        
         <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+
         <div className="form-check">
           <input
             className="form-check-input"
@@ -104,11 +74,21 @@ const Login = () => {
           />
           <label className="form-check-label">Ricordami</label>
         </div>
+
+    
         <div className="button-container">
           <button onClick={handleLogin}>Accedi</button>
           <button>Registrati</button>
+
+  
         </div>
+
         <div className="additional-info mt-3">
+
+        {userPassword === false && (
+            <p className="text-danger">Password sbagliata! Riprova, oppure:</p>
+          )}
+
           <p>
             <a href="#">Password dimenticata?</a>
           </p>
