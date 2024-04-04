@@ -61,7 +61,6 @@ const ProfileHeader = function () {
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
     const form = event.currentTarget;
 
     if (form.checkValidity() === false) {
@@ -96,6 +95,7 @@ const ProfileHeader = function () {
       console.log("Profile updated successfully:", updatedProfileData);
       setFormData(updatedProfileData);
       handleClose();
+      window.location.reload();
     } catch (error) {
       console.error("Error updating profile:", error);
     }
