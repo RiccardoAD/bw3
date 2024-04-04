@@ -49,7 +49,7 @@ function LinkedInNavbar() {
             <Nav className="flex-xs-row-reverse d-md-flex align-items-center ms-4 gap-4">
               <div className="icons_navbar">
                 <img src={home} alt="home_icon" />
-                <Nav.Link href="/Home" className="p-0">
+                <Nav.Link href="/" className="p-0">
                   Home
                 </Nav.Link>
               </div>
