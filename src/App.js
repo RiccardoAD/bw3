@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import FooterProfile from "./components/FooterProfile";
+
 import LinkedInNavbar from "./components/LinkedInNavbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProfilePage from "./components/ProfilePage";
@@ -20,7 +20,7 @@ function App() {
         <Route path="/" element={<HomeAndFooterDx />} />
       </Routes>
 
-      <FooterProfile />
+      
     </BrowserRouter>
   );
 }

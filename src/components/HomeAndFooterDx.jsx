@@ -3,13 +3,14 @@ import logo from "../assets/svg/svgexport-1.svg";
 import { CaretDownFill, InfoSquareFill } from "react-bootstrap-icons";
 import GeneratedPost from "./GeneratedPost.jsx";
 import AddPost from "./AddPost.jsx";
+import ParteSinistraHome from "./ParteSinistraHome.jsx";
 
 const HomeAndFooterDx = () => {
   return (
-    <Container className="mt-5">
+    <Container className="mt-5 sfondo">
       <Row className="pt-4">
         <Col sm={12} md={3}>
-          {/* qui il mini profilo benvenuto */}
+          <ParteSinistraHome/>
         </Col>
         <Col sm={12} md={6} className="pe-0">
           <AddPost />

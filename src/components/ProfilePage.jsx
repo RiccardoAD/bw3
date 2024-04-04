@@ -6,6 +6,7 @@ import Informazioni from "./Informazioni";
 import ExperienceComponent from "./ExperienceComponent";
 import Formazione from "./Formazione";
 import ProfileDexSideBar from "./ProfileDexSideBar";
+import FooterProfile from "./FooterProfile";
 
 const ProfilePage = function () {
   return (
@@ -36,6 +37,9 @@ const ProfilePage = function () {
         <Col className="col-md-5 col-lg-4 xxl-3 d-none d-md-block">
           <ProfileDexSideBar />
         </Col>
+        <Row>
+          <FooterProfile />
+        </Row>
       </Row>
     </Container>
   );

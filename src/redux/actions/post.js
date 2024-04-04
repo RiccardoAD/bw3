@@ -29,3 +29,5 @@ const post = () => {
 };
 
 export default post;
+
+// "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBkNWU2MGY5NGY0YTAwMTkzNzkxZDYiLCJpYXQiOjE3MTIxNTIxNjAsImV4cCI6MTcxMzM2MTc2MH0.RcnjBt8Rp9rbpgktsZhm9U5HzwymeiRgeKD0WWAT-Rg"

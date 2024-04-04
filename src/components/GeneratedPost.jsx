@@ -35,15 +35,15 @@ const GeneratedPost = () => {
             <Spinner />
           ) : (
             resultsSlice.map((p, index) => (
-              <div key={index} className="bg-white mb-2 rounded border border-secondary-light">
-                <div className="d-flex">
-                  <img src={p.image} alt="" className="icon asideImg rounded-circle mx-2 my-1" />
+              <Row key={index} className="bg-white mb-2 rounded border border-secondary-light mx-1">
+                <Col className="d-flex">
+                  <img src={p.image} alt="" className="asideImg rounded-circle mx-2 mt-2" />
                   <div>
                     <p className="fw-bold ms-1 mt-1">{p.username}</p>
                     <p className="ms-1 text-secondary">{p.user.title}</p>
                   </div>
                   <p className="ms-auto me-2 mt-1 text-primary fw-bold">Segui</p>
-                </div>
+                </Col>
                 <p className="mx-2">{p.text}</p>
                 <hr />
                 <div className="d-flex justify-content-between mx-2 align-items-center text-secondary">
@@ -63,7 +63,7 @@ const GeneratedPost = () => {
                     <Send className="me-1" /> Invia
                   </p>
                 </div>
-              </div>
+              </Row>
             ))
           )}
         </Col>

@@ -29,17 +29,17 @@ const AddPost = () => {
       <Container className="bg-white rounded-3 pt-3 mb-3 ">
         <Container>
           <Row>
-            <Col xs={1} className="me-2 ps">
+            <Col xs={1} className="me-2 ps-2 d-flex">
               <img
                 src="https://placedog.net/916?id=141"
                 alt="profileImage"
-                className=" rounded rounded-circle postImage"
+                className="rounded rounded-circle postImage"
               />
             </Col>
-            <Col>
+            <Col   className="d-flex align-items-center ms-1">
               <button
                 style={{ borderColor: "#666666" }}
-                className="btn btn-light text-start  text-opacity-50 fw-medium  rounded-pill w-100 h-100 opacity-75"
+                className="btn btn-light text-start  text-opacity-50 fw-medium  rounded-pill w-100 opacity-75"
                 onClick={handleShow}
               >
                 Avvia un post
@@ -82,7 +82,7 @@ const AddPost = () => {
             </Col>
           </Row>
         </Container>
-        <Container className="my-2 ">
+        <Container className="my-2 pb-1">
           <Row>
             <Col className="col-5">
               {" "}
@@ -111,7 +111,7 @@ const AddPost = () => {
                 >
                   <path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm64 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm128 0v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H336zM64 400v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H208zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H336c-8.8 0-16 7.2-16 16z" />
                 </svg>
-                Evento
+                <span>Evento</span>
               </button>
             </Col>
             <Col className="col-4">
@@ -127,7 +127,7 @@ const AddPost = () => {
                   {" "}
                   <path d="M96 96c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H80c-44.2 0-80-35.8-80-80V128c0-17.7 14.3-32 32-32s32 14.3 32 32V400c0 8.8 7.2 16 16 16s16-7.2 16-16V96zm64 24v80c0 13.3 10.7 24 24 24H296c13.3 0 24-10.7 24-24V120c0-13.3-10.7-24-24-24H184c-13.3 0-24 10.7-24 24zm208-8c0 8.8 7.2 16 16 16h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H384c-8.8 0-16 7.2-16 16zm0 96c0 8.8 7.2 16 16 16h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H384c-8.8 0-16 7.2-16 16zM160 304c0 8.8 7.2 16 16 16H432c8.8 0 16-7.2 16-16s-7.2-16-16-16H176c-8.8 0-16 7.2-16 16zm0 96c0 8.8 7.2 16 16 16H432c8.8 0 16-7.2 16-16s-7.2-16-16-16H176c-8.8 0-16 7.2-16 16z" />
                 </svg>
-                Scrivi un articolo
+                <span>Scrivi un articolo</span>
               </button>
             </Col>
           </Row>
