@@ -5,14 +5,16 @@ import Form from "react-bootstrap/Form";
 import AddIcon from "../assets/svg/add_icon.svg";
 
 const AddExpModal = ({ userId }) => {
-  const [validated, setValidated] = useState(false);
-  const [formData, setFormData] = useState({
-    position: "",
+  const initialPosition = {
+    role: "",
     company: "",
     startDate: "",
     endDate: "",
+    description: "",
     area: "",
-  });
+  };
+  const [validated, setValidated] = useState(false);
+  const [formData, setFormData] = useState(initialPosition);
 
   const [show, setShow] = useState(false);
 
@@ -20,14 +22,6 @@ const AddExpModal = ({ userId }) => {
   const handleShow = () => setShow(true);
 
   const formRef = useRef(null);
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -47,12 +41,16 @@ const AddExpModal = ({ userId }) => {
           },
           body: JSON.stringify(formData),
         });
-        if (!response.ok) {
+        if (response.ok) {
+          setFormData(initialPosition);
+          console.log("LAVORO", formData);
+        } else if (!response.ok) {
           throw new Error("Failed to add experience");
         }
 
         // After successful submission, close the modal
         handleClose();
+        window.location.reload();
       } catch (error) {
         console.error("Error adding experience:", error);
       }
@@ -64,7 +62,7 @@ const AddExpModal = ({ userId }) => {
         src={AddIcon}
         className="editIcon"
         style={{ position: "absolute", top: "1rem", right: "1.8rem" }}
-        onClick={handleShow} // Use handleShow function passed from parent
+        onClick={handleShow}
       />
 
       <Modal show={show} onHide={handleClose} size="lg">
@@ -77,37 +75,114 @@ const AddExpModal = ({ userId }) => {
           <Form ref={formRef} noValidate validated={validated} onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="posizione lavorativa">
               <Form.Label>Posizione lavorativa</Form.Label>
-              <Form.Control required type="text" placeholder="Scrivi qui la tua posizione lavorativa" />
+              <Form.Control
+                required
+                type="text"
+                placeholder="Scrivi qui la tua posizione lavorativa"
+                name="role"
+                value={formData.role}
+                onChange={(e) => {
+                  setFormData((prevFormData) => ({
+                    ...prevFormData,
+                    role: e.target.value,
+                  }));
+                }}
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="compagnia">
               <Form.Label>Compagnia</Form.Label>
-              <Form.Control required type="text" placeholder="Scrivi qui la compagnia per cui hai lavorato" />
+              <Form.Control
+                required
+                type="text"
+                placeholder="Scrivi qui la tua posizione lavorativa"
+                name="company"
+                value={formData.company}
+                onChange={(e) => {
+                  setFormData((prevFormData) => ({
+                    ...prevFormData,
+                    company: e.target.value,
+                  }));
+                }}
+              />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="data di inizio">
               <Form.Label>Data di Inizio</Form.Label>
-              <Form.Control required type="text" placeholder="Scrivi qui la tua data di inizio" />
+              <Form.Control
+                required
+                type="text"
+                placeholder="Scrivi qui la tua posizione lavorativa"
+                name="startDate"
+                value={formData.startDate}
+                onChange={(e) => {
+                  setFormData((prevFormData) => ({
+                    ...prevFormData,
+                    startDate: e.target.value,
+                  }));
+                }}
+              />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="data conclusione">
               <Form.Label>Data Conclusione</Form.Label>
-              <Form.Control required type="text" placeholder="Scrivi qui la scadenza del tuo contratto" />
+              <Form.Control
+                required
+                type="text"
+                placeholder="Scrivi qui la tua posizione lavorativa"
+                name="endDate"
+                value={formData.endDate}
+                onChange={(e) => {
+                  setFormData((prevFormData) => ({
+                    ...prevFormData,
+                    endDate: e.target.value,
+                  }));
+                }}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="descrizione">
+              <Form.Label>Descrizione</Form.Label>
+              <Form.Control
+                required
+                as="textarea"
+                rows={3}
+                placeholder="Inserisci una breve descrizione del lavoro"
+                name="description"
+                value={formData.description}
+                onChange={(e) => {
+                  setFormData((prevFormData) => ({
+                    ...prevFormData,
+                    description: e.target.value,
+                  }));
+                }}
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="area geografica">
               <Form.Label>Area Geografica</Form.Label>
-              <Form.Control required type="text" placeholder="Scrivi qui la tua area geografica" />
+              <Form.Control
+                required
+                type="text"
+                placeholder="Scrivi qui la tua posizione lavorativa"
+                name="area"
+                value={formData.area}
+                onChange={(e) => {
+                  setFormData((prevFormData) => ({
+                    ...prevFormData,
+                    area: e.target.value,
+                  }));
+                }}
+              />
             </Form.Group>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+              <Button type="submit" variant="primary" onClick={handleSubmit}>
+                Save Changes
+              </Button>
+            </Modal.Footer>
           </Form>
           {/*     FINE FORM */}
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button type="submit" variant="primary" onClick={handleSubmit}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   );

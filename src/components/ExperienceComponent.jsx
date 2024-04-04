@@ -97,12 +97,12 @@ const ExperienceComponent = function () {
             <Row>
               <Col>
                 {/*  PULSANTE "+" E MODALE D'AGGIUNTA CHE SI MOSTRA SOLO NELLA PAGINA DI MODIFICA */}
-                {params.userId && <AddExpModal userId={profileData._id} />}
+                {params.userId && profileData && <AddExpModal userId={profileData._id} />}
                 {/* FINE MODALE D'AGGIUNTA */}
 
                 {/* PULSANTE EDIT CON LINK ALLA PAGINA ESPERIENZE CHE SI MOSTRA SOLO NELLA PAGINA PROFILE */}
 
-                {profileData && (
+                {!params.userId && profileData && (
                   <Link to={`/profile/experiences/${profileData._id}`}>
                     <img src={EditPen} className="editIcon" style={{ position: "absolute", top: "1rem" }} />
                   </Link>
