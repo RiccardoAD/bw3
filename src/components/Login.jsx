@@ -1,22 +1,22 @@
-// css
+// // css
 import "../assets/css/style.css";
 import React, { useState } from "react";
 import { userLoginAction } from "../redux/actions/user";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-//definiamo  tre stati utilizzando il metodo useState:
-//username
-//password
-//rememberMe
+// // Definiamo tre stati utilizzando il metodo useState:
+// // username
+// // password
+// // rememberMe
 
-//USERNAME - variabile di stato chiamata username e inizializza il suo valore a una stringa vuota "",dato che non c'è un valore booleano predefinito.
-//setUsername è la funzione che consente di aggiornare questo stato. Quando viene chiamata, React aggiorna automaticamente la visualizzazione per riflettere il nuovo valore di username.
+// // USERNAME - variabile di stato chiamata username e inizializza il suo valore a una stringa vuota "",dato che non c'è un valore booleano predefinito.
+// // setUsername è la funzione che consente di aggiornare questo stato. Quando viene chiamata, React aggiorna automaticamente la visualizzazione per riflettere il nuovo valore di username.
 
-//REMEMBER ME
-//useState(false) viene utilizzato per inizializzare lo stato del checkbox "Ricordami" a false, il che significa che di default il checkbox non è spuntato.
-//quando l'utente interagisce con il checkbox (ad esempio, cliccandoci sopra), viene chiamata la funzione setRememberMe passando il nuovo valore di !rememberMe,
-//che cambia il valore di rememberMe da false a true o viceversa.
+// // REMEMBER ME
+// useState(false) viene utilizzato per inizializzare lo stato del checkbox "Ricordami" a false, il che significa che di default il checkbox non è spuntato.
+// quando l'utente interagisce con il checkbox (ad esempio, cliccandoci sopra), viene chiamata la funzione setRememberMe passando il nuovo valore di !rememberMe,
+// che cambia il valore di rememberMe da false a true o viceversa.
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -35,7 +35,7 @@ const Login = () => {
   //La funzione handleLogin è chiamata quando viene cliccato il pulsante "Accedi".
   // Attualmente, questa funzione semplicemente registra i valori dell'username, della password e dello stato "Ricordami" nella console utilizzando console.log()
   const handleLogin = () => {
-    //logica per effettuare il login
+    // logica per effettuare il login
     console.log("Username:", username);
     console.log("Password:", password);
     console.log("Remember Me:", rememberMe);
@@ -91,7 +91,7 @@ const Login = () => {
           </p>
         </div>
       </div>
-      <div className="image-container">
+      <div className="image-container d-none d-lg-block">
         <img
           src="https://static.licdn.com/aero-v1/sc/h/dxf91zhqd2z6b0bwg85ktm5s4" // l'URL
           alt="Image"
@@ -103,3 +103,5 @@ const Login = () => {
 };
 
 export default Login;
+
+//---
