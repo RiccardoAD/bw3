@@ -4,6 +4,7 @@ html,
   overflow-x: clip;
 }
 
+
 .footer p {
   color: #3b3b3b;
 }
@@ -167,6 +168,7 @@ html,
 /* sezione post e footer home destra  */
 .postImage {
   width: 50px;
+  height: 50px;
 }
 
 .font-home-destra {
@@ -185,3 +187,10 @@ html,
   background-color: #f3f2ee;
   padding: 5px;
 }
+.asideImg{
+  width: 50px ;
+  height: 50px;
+}
+ span{
+ font-size: 0.9rem;
+ }

@@ -5,7 +5,7 @@ function ParteSinistraHome() {
   return (
     <div className="container position-relative">
       {/* Prima card */}
-      <div className="card bg-white border border-secondary" style={{ width: "300px" }}>
+      <div className="card bg-white border border-secondary" >
         <img
           src="https://cdn.create.vista.com/downloads/b2be2cb4-8abc-452e-b2a4-df3189cc2756_640.jpeg"
           className="card-img-top"
@@ -13,7 +13,7 @@ function ParteSinistraHome() {
         />
 
         {/* Altri contenuti della card */}
-        <div className="card-body ">
+        <div className="card-body">
           <h5 className="card-title text-center">Nome e Cognome</h5>
           <p className="card-text text-center">Ruolo Professionale</p>
           <hr className="bg-light" /> {/* Riga grigia */}
@@ -34,7 +34,7 @@ function ParteSinistraHome() {
       </div>
 
       {/* Seconda card con contenuti diversi */}
-      <div className="card bg-white border border-secondary mt-4" style={{ width: "300px" }}>
+      <div className="card bg-white border border-secondary mt-4 d-none d-lg-block " >
         {/* Contenuti della seconda card */}
         <div className="card-body ">
           <p className="text-left font-weight-bold mt-0">Recenti</p>
