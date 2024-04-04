@@ -3,10 +3,8 @@ import "../assets/css/style.css";
 import React, { useState } from "react";
 import { userLoginAction } from "../redux/actions/user";
 import { useSelector, useDispatch } from "react-redux";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
+import { useNavigate } from "react-router-dom";
 
-import Alert from "react-bootstrap/Alert";
 
 //definiamo  tre stati utilizzando il metodo useState:
 //username
@@ -23,6 +21,7 @@ import Alert from "react-bootstrap/Alert";
 
 const Login = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -43,10 +42,17 @@ const Login = () => {
     console.log("Remember Me:", rememberMe);
     dispatch(userLoginAction(password));
     console.log("arey the logged in?", userPassword);
+
   };
 
   return (
     <div className="login-container">
+
+ {userPassword === true &&
+ (navigate("/"))}
+
+
+
       <div className="login-form">
         <img
           src="https://www.salvatorepumo.it/wp-content/uploads/2022/02/logo-linkedin-oggi.png"
