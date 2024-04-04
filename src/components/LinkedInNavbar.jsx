@@ -31,7 +31,7 @@ function LinkedInNavbar() {
       {profileData && (
         <>
           <Navbar collapseOnSelect expand="sm" className="flex-xs-row-reverse bg-body-tertiary fixed-top">
-            <Container>
+            <Container className="d-flex">
               <div className="d-flex align-items-center gap-sm-3">
                 <div className="d-flex me-2">
                   <Navbar.Brand href="#home" className="container_logo_navbar_fixed m-0" width="45px" height="45px">
@@ -59,7 +59,7 @@ function LinkedInNavbar() {
 
               <div className="d-md-flex">
                 <div className=" gap-5 d-flex ">
-                  <Nav className="flex-xs-row-reverse d-md-flex align-items-center ms-4 gap-4">
+                  <Nav className= "d-md-flex align-items-center ms-4 gap-4">
                     <div className="icons_navbar">
                       <img src={home} alt="home_icon" />
                       <Nav.Link as={Link} to="/" className="p-0">

@@ -33,7 +33,9 @@ const AddPost = () => {
 
   return (
     <>
-      <Container className="bg-white rounded-3 pt-3 mb-3 ">
+      {profileData && (
+        <>
+      <Container className="bg-white rounded-3 pt-3 my-3 ">
         <Container>
           <Row>
             <Col xs={1} className="me-2 ps-2 d-flex">
@@ -141,6 +143,8 @@ const AddPost = () => {
         </Container>
       </Container>
     </>
+       )}
+       </>
   );
 };
 
