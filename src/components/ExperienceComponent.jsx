@@ -95,7 +95,9 @@ const ExperienceComponent = function () {
                 </Col>
                 <Col>
                   <p className="fw-bold">{experience.role}</p>
-                  <p className="timeAndLocation">{`${experience.startDate} - ${experience.endDate || "Present"}`}</p>
+                  <p className="timeAndLocation">{`${experience.startDate.split("T")[0]} - ${
+                    experience.endDate.split("T")[0] || "Present"
+                  }`}</p>
                   <p>{experience.description}</p>
                 </Col>
               </Row>
