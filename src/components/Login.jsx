@@ -5,7 +5,6 @@ import { userLoginAction } from "../redux/actions/user";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-
 //definiamo  tre stati utilizzando il metodo useState:
 //username
 //password
@@ -42,16 +41,11 @@ const Login = () => {
     console.log("Remember Me:", rememberMe);
     dispatch(userLoginAction(password));
     console.log("arey the logged in?", userPassword);
-
   };
 
   return (
     <div className="login-container">
-
- {userPassword === true &&
- (navigate("/"))}
-
-
+      {userPassword === true && navigate("/")}
 
       <div className="login-form">
         <img
@@ -68,7 +62,7 @@ const Login = () => {
           onChange={(e) => setUsername(e.target.value)}
         />
         <p>Password</p>
-        
+
         <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
 
         <div className="form-check">
@@ -81,19 +75,13 @@ const Login = () => {
           <label className="form-check-label">Ricordami</label>
         </div>
 
-    
         <div className="button-container">
           <button onClick={handleLogin}>Accedi</button>
           <button>Registrati</button>
-
-  
         </div>
 
         <div className="additional-info mt-3">
-
-        {userPassword === false && (
-            <p className="text-danger">Password sbagliata! Riprova, oppure:</p>
-          )}
+          {userPassword === false && <p className="text-danger">Password sbagliata! Riprova, oppure:</p>}
 
           <p>
             <a href="#">Password dimenticata?</a>

@@ -9,7 +9,7 @@ const initialState = {
 
 const checkPassword = function (password) {
     
-    if ( password === "ciao" 
+    if ( password === "epicode" 
     ) {
         return true
       } else {
