@@ -1,8 +1,49 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Importa lo stile di Bootstrap
-import { Row, Col } from "react-bootstrap";
-import {Container} from "react-bootstrap";
+// import { useDispatch, useSelector } from "react-redux";
+// import { useEffect, useState } from "react";
+import { Col, Row, Container } from "react-bootstrap";
+// import { profileFetch, updateProfile } from "../redux/actions/profile";
+
+
 function ParteSinistraHome() {
+  // const profile = useSelector((state) => state.profile);
+  // const id = "6551e7bbc55e7e0018f83bfb";
+  // const dispatch = useDispatch();
+
+  // const [localProfile, setLocalProfile] = useState({
+  //   name: "",
+  //   surname: "",
+  //   email: "",
+  //   username: "",
+  //   bio: "",
+  //   title: "",
+  //   area: "",
+  //   image: "", // SERVER GENERATED, modificabile
+  //   createdAt: "", // SERVER GENERATED
+  //   updatedAt: "", // SERVER GENERATED
+  //   __v: "", // SERVER GENERATED
+  //   _id: "", // SERVER GENERATED
+  // });
+
+  // const handleUpdateProfile = () => {
+  //   dispatch(updateProfile(localProfile));
+  //   console.log(localProfile);
+  // };
+
+  // // ---------------------------------
+
+  // // -------IMAGE
+  // const handleImageChange = (e) => {
+  //   const file = e.target.files[0];
+  // };
+
+  // useEffect(() => {
+  //   dispatch(profileFetch(id));
+  //   // dispatch(experiencesFetch(id));
+  //   setLocalProfile(profile);
+  // }, [dispatch]);
+
   return (
         <>
       <Container>
@@ -21,7 +62,7 @@ function ParteSinistraHome() {
                 <div id="miniProfile">
                
                   <img src="https://placedog.net/916?id=141" alt="Profile" className="position-absolute translate-middle-y img-fluid rounded rounded-circle  " />
-                  {/* <img src={profile.img}   alt="Profile" className="img-fluid" /> */}
+                  {/* <img src={profile.img}   alt="Profile" className= "position-absolute translate-middle-y img-fluid rounded rounded-circle  " /> */}
                 </div>
               </div>
             </Row>
@@ -40,8 +81,8 @@ function ParteSinistraHome() {
                 <Row className="  text-secondary mt-0 ">
                   <Col className="d-flex">
                     <div>
-                      {/* <p className="mb-2">{profile.area}</p> */}
-                      <p className="mb-2">placeholder</p>
+                      {/* <p className="mb-2 text-center">{profile.area}</p> */}
+                      <p className="mb-2 text-center">placeholder</p>
                       
                     </div>
                   </Col>
