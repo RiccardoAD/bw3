@@ -1,7 +1,6 @@
 import { Row, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import EditPen from "../assets/svg/edit_pen_long.svg";
-
 import RightArrow from "../assets/svg/right_arrow_icon.svg";
 import CompanyIcon from "../assets/company_icon.png";
 import { Link, useParams } from "react-router-dom";
@@ -28,7 +27,7 @@ const ExperienceComponent = function () {
   console.log("PROVA STATO REDUX", profileData);
 
   useEffect(() => {
-    if (profileData._id) {
+    if (profileData) {
       fetchExperiences(profileData._id);
     }
   }, [profileData]);
@@ -102,7 +101,8 @@ const ExperienceComponent = function () {
                 {/* FINE MODALE D'AGGIUNTA */}
 
                 {/* PULSANTE EDIT CON LINK ALLA PAGINA ESPERIENZE CHE SI MOSTRA SOLO NELLA PAGINA PROFILE */}
-                {!params.userId && (
+
+                {profileData && (
                   <Link to={`/profile/experiences/${profileData._id}`}>
                     <img src={EditPen} className="editIcon" style={{ position: "absolute", top: "1rem" }} />
                   </Link>
