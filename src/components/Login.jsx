@@ -3,6 +3,10 @@ import "../assets/css/style.css";
 import React, { useState } from "react";
 import { userLoginAction } from "../redux/actions/user";
 import { useSelector, useDispatch } from "react-redux";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+
+import Alert from "react-bootstrap/Alert";
 
 //definiamo  tre stati utilizzando il metodo useState:
 //username
@@ -18,11 +22,20 @@ import { useSelector, useDispatch } from "react-redux";
 //che cambia il valore di rememberMe da false a true o viceversa.
 
 const Login = () => {
+
+
+  const dispatch = useDispatch();
+
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow =  () => { setShow(true);}
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
 
-  const dispatch = useDispatch();
 
   const userLoggedIn = useSelector((state) => state.user.isLoggedIn); // inizialmente è false
 
@@ -39,10 +52,33 @@ const Login = () => {
     console.log("Remember Me:", rememberMe);
     dispatch(userLoginAction(password));
     console.log("arey the logged in?", userPassword);
+
+    if (userPassword === false) {
+      handleShow();
+    }
+
+    if (userPassword === true) {
+
+    }
   };
 
   return (
     <div className="login-container">
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Password errata!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Riprova o se non sei ancora dei nostri, registrati!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
       <div className="login-form">
         <img
           src="https://www.salvatorepumo.it/wp-content/uploads/2022/02/logo-linkedin-oggi.png"
