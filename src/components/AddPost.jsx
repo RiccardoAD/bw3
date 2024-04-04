@@ -4,12 +4,12 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
-import { CaretDownFill,  Clock } from "react-bootstrap-icons";
+import { CaretDownFill, Clock } from "react-bootstrap-icons";
 import { useDispatch } from "react-redux";
 
 const AddPost = () => {
   const [show, setShow] = useState(false);
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -53,7 +53,7 @@ const AddPost = () => {
                       alt="profileImage"
                       className=" rounded rounded-circle postImage me-2"
                     />
-                    Nome utente 
+                    Nome utente
                     <CaretDownFill className="ms-2 text-secondary fs-5" />
                   </Modal.Title>
                 </Modal.Header>

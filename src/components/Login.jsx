@@ -1,6 +1,9 @@
 // css
 import "../assets/css/style.css";
 import React, { useState } from "react";
+import { userLoginAction } from "../redux/actions/user";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 //definiamo  tre stati utilizzando il metodo useState:
 //username
@@ -16,21 +19,34 @@ import React, { useState } from "react";
 //che cambia il valore di rememberMe da false a true o viceversa.
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
 
+  const userLoggedIn = useSelector((state) => state.user.isLoggedIn); // inizialmente è false
+
+  const userName = useSelector((state) => state.user.name);
+
+  const userPassword = useSelector((state) => state.user.checkPassword); // true se "ciao"
+
   //La funzione handleLogin è chiamata quando viene cliccato il pulsante "Accedi".
-  // ttualmente, questa funzione semplicemente registra i valori dell'username, della password e dello stato "Ricordami" nella console utilizzando console.log()
+  // Attualmente, questa funzione semplicemente registra i valori dell'username, della password e dello stato "Ricordami" nella console utilizzando console.log()
   const handleLogin = () => {
     //logica per effettuare il login
     console.log("Username:", username);
     console.log("Password:", password);
     console.log("Remember Me:", rememberMe);
+    dispatch(userLoginAction(password));
+    console.log("arey the logged in?", userPassword);
   };
 
   return (
     <div className="login-container mt-5 pt-5">
+      {userPassword === true && navigate("/")}
+
       <div className="login-form">
         <img
           src="https://www.salvatorepumo.it/wp-content/uploads/2022/02/logo-linkedin-oggi.png"
@@ -46,7 +62,9 @@ const Login = () => {
           onChange={(e) => setUsername(e.target.value)}
         />
         <p>Password</p>
+
         <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+
         <div className="form-check">
           <input
             className="form-check-input"
@@ -56,11 +74,15 @@ const Login = () => {
           />
           <label className="form-check-label">Ricordami</label>
         </div>
+
         <div className="button-container">
           <button onClick={handleLogin}>Accedi</button>
           <button>Registrati</button>
         </div>
+
         <div className="additional-info mt-3">
+          {userPassword === false && <p className="text-danger">Password sbagliata! Riprova, oppure:</p>}
+
           <p>
             <a href="#">Password dimenticata?</a>
           </p>
