@@ -1,24 +1,20 @@
-import { USER_LOGIN } from '../actions'
+import { USER_LOGIN } from '../actions/user'
 
 const initialState = {
   name: '',
+  password: '',
   isLoggedIn: false,
-  isAdmin: false,
 }
 
-const checkAdmin = function (nameValue) {
-  const lowerCaseValue = nameValue.toLowerCase()
-  if (
-    lowerCaseValue.match(/gianmaria/i) ||
-    lowerCaseValue.match(/sara/i) ||
-    lowerCaseValue.match(/riccardo/i) ||
-    lowerCaseValue.match(/giuseppe/i) ||
-    lowerCaseValue.match(/damaride/i)
-  ) {
-    return true
-  } else {
-    return false
-  }
+
+const checkPassword = function (password) {
+    
+    if ( password === "ciao" 
+    ) {
+        return true
+      } else {
+        return false
+      }
 }
 
 // state rappresenta lo stato corrente, action rappresenta l'azione appena "dispatchata"
@@ -39,8 +35,8 @@ const userReducer = function (state = initialState, action) {
         // come sempre, creo il nuovo stato dell'applicativo
         ...state, // non mi perdo le altre proprietà di user!
         name: action.payload,
+        checkPassword: checkPassword(action.payload),
         isLoggedIn: true,
-        isAdmin: checkAdmin(action.payload), // torna true o torna false
       }
 
     default:

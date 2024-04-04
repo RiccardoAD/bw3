@@ -1,6 +1,8 @@
 // css
 import "../assets/css/style.css";
 import React, { useState } from "react";
+import { userLoginAction } from "../redux/actions/user";
+import { useSelector, useDispatch } from "react-redux";
 
 //definiamo  tre stati utilizzando il metodo useState:
 //username
@@ -20,13 +22,23 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
 
+  const dispatch = useDispatch();
+
+  const userLoggedIn = useSelector((state) => state.user.isLoggedIn); // inizialmente è false
+
+  const userName = useSelector((state) => state.user.name);
+
+  const userPassword = useSelector((state) => state.user.checkPassword); // true se "ciao"
+
   //La funzione handleLogin è chiamata quando viene cliccato il pulsante "Accedi".
-  // ttualmente, questa funzione semplicemente registra i valori dell'username, della password e dello stato "Ricordami" nella console utilizzando console.log()
+  // Attualmente, questa funzione semplicemente registra i valori dell'username, della password e dello stato "Ricordami" nella console utilizzando console.log()
   const handleLogin = () => {
     //logica per effettuare il login
     console.log("Username:", username);
     console.log("Password:", password);
     console.log("Remember Me:", rememberMe);
+    dispatch(userLoginAction(password));
+    console.log("arey the logged in?", userPassword);
   };
 
   return (
