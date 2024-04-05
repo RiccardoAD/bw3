@@ -13,13 +13,8 @@ const HomeAndFooterDx = () => {
           <ParteSinistraHome />
         </Col>
 
-
-
         <Col>
-
-
           <Row>
-
             <Col>
               <AddPost />
 
@@ -32,11 +27,15 @@ const HomeAndFooterDx = () => {
                   <span className="mb-2 ps-3 py-1 fw-bold text-black fs-6">LinkedIn Notizie</span>
                   <InfoSquareFill className="mb-2 me-3 text-black"></InfoSquareFill>
                 </div>
+
                 <ul className="me-3 text-black">
                   <li className="mb-1">
                     <p className="mb-0 fw-bold text-black">Piu sfide per la cybersecurity</p>
-                    <p className="timeAndLocation">Notizie principali <span className="text-primary">&#x25CF; 26 lettori</span></p>
+                    <p className="timeAndLocation">
+                      Notizie principali <span className="text-primary">&#x25CF; 26 lettori</span>
+                    </p>
                   </li>
+
                   <li className="mb-1">
                     <p className="mb-0 fw-bold text-black">SONDAGGIO: Cosa valuti di più...</p>
                     <p className="timeAndLocation">1 giorno fa</p>
@@ -59,60 +58,54 @@ const HomeAndFooterDx = () => {
                   <CaretDownFill className="ms-2"></CaretDownFill>
                 </div>
               </div>
-          
 
-         {/*  START SIDEBAR FOOTER  */}
-          <div className="mb-2 py-2">
-            <div className="d-flex mx-4 justify-content-center">
-              <a href="#" className="me-2 text-decoration-none  text-secondary font-home-destra">
-                Informazioni
-              </a>
-              <a href="#" className="me-2 text-decoration-none  text-secondary font-home-destra">
-                Accessibilità
-              </a>
-            </div>
-            <div className="d-flex mx-4 justify-content-center my-2">
-              <a href="#" className="me-2 text-decoration-none  text-secondary font-home-destra">
-                Centro Assistenza
-              </a>
-              <a href="#" className="me-2  text-decoration-none  text-secondary font-home-destra">
-                Privacy e condizioni
-              </a>
-            </div>
-            <div className="d-flex mx-4 justify-content-center">
-              <a href="#" className="me-2 text-decoration-none  text-secondary font-home-destra">
-                Opzioni per gli annunci pubblicitari
-              </a>
-            </div>
-            <div className="d-flex mx-4 my-2 justify-content-center">
-              <a href="#" className="me-2 text-decoration-none  text-secondary font-home-destra">
-                Pubblicità
-              </a>
-              <a href="#" className="me-2 text-decoration-none  text-secondary font-home-destra">
-                Servizi alle aziende
-              </a>
-            </div>
-            <div className="d-flex mx-4 justify-content-center">
-              <a href="#" className="me-2 text-decoration-none  text-secondary font-home-destra">
-                Scarica l'app LinkedIn
-              </a>
-              <a href="#" className="me-2 text-decoration-none  text-secondary font-home-destra">
-                Altro
-              </a>
-            </div>
-            <div className="d-flex flex-column mx-4 align-items-center mt-3">
-              <img src={logo} x="0" y="0" width="56" height="14" alt="logo2"/>
-              <p className="font-home-destra ms-1 ">LinkedIn Corporation © 2024</p>
-            </div>
-          </div>
-        </Col>
-
-
-
+              {/*  START SIDEBAR FOOTER  */}
+              <div className="mb-2 py-2">
+                <div className="d-flex mx-4 justify-content-center">
+                  <a href="#" className="me-2 text-decoration-none  text-secondary font-home-destra">
+                    Informazioni
+                  </a>
+                  <a href="#" className="me-2 text-decoration-none  text-secondary font-home-destra">
+                    Accessibilità
+                  </a>
+                </div>
+                <div className="d-flex mx-4 justify-content-center my-2">
+                  <a href="#" className="me-2 text-decoration-none  text-secondary font-home-destra">
+                    Centro Assistenza
+                  </a>
+                  <a href="#" className="me-2  text-decoration-none  text-secondary font-home-destra">
+                    Privacy e condizioni
+                  </a>
+                </div>
+                <div className="d-flex mx-4 justify-content-center">
+                  <a href="#" className="me-2 text-decoration-none  text-secondary font-home-destra">
+                    Opzioni per gli annunci pubblicitari
+                  </a>
+                </div>
+                <div className="d-flex mx-4 my-2 justify-content-center">
+                  <a href="#" className="me-2 text-decoration-none  text-secondary font-home-destra">
+                    Pubblicità
+                  </a>
+                  <a href="#" className="me-2 text-decoration-none  text-secondary font-home-destra">
+                    Servizi alle aziende
+                  </a>
+                </div>
+                <div className="d-flex mx-4 justify-content-center">
+                  <a href="#" className="me-2 text-decoration-none  text-secondary font-home-destra">
+                    Scarica l'app LinkedIn
+                  </a>
+                  <a href="#" className="me-2 text-decoration-none  text-secondary font-home-destra">
+                    Altro
+                  </a>
+                </div>
+                <div className="d-flex flex-column mx-4 align-items-center mt-3">
+                  <img src={logo} x="0" y="0" width="56" height="14" alt="logo2" />
+                  <p className="font-home-destra ms-1 ">LinkedIn Corporation © 2024</p>
+                </div>
+              </div>
+            </Col>
           </Row>
         </Col>
-
-        
       </Row>
     </Container>
   );
