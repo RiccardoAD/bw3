@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProfile } from "../redux/actions";
 import { Col, Row, Button, Modal } from "react-bootstrap";
 import ProfileFetch from "./ProfileFetch";
+import { Link } from "react-bootstrap-icons";
 
 function ProfilesSugg() {
   const dispatch = useDispatch();
