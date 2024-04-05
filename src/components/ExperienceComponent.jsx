@@ -37,6 +37,10 @@ const ExperienceComponent = (props) => {
     }
   };
 
+  const pathname = window.location.pathname;
+  const parts = pathname.split("/");
+  const wordUrl = parts[2];
+
   /*  PARAMS CHE VERRANNO AGGIORNATI CON L'USERID DELLA FETCH */
   const params = useParams();
   console.log("PARAMS", params);
@@ -48,7 +52,7 @@ const ExperienceComponent = (props) => {
           <div id="otherCards" style={{ paddingBottom: "0.2rem" }}>
             <Row>
               <Col>
-                {params.userId && <AddExpModal userId={userId} />}
+                {wordUrl === "experiences" && <AddExpModal userId={userId} />}
 
                 {!params.userId && (
                   <Link to={`/profile/experiences/${userId}`}>
@@ -63,7 +67,9 @@ const ExperienceComponent = (props) => {
             {experiences.map((experience) => (
               <Row key={experience._id} className="border-top py-3" style={{ position: "relative" }}>
                 <Col className="col-2 col-lg-1 d-flex justify-content-center align-items-start">
-                  {params.userId && <ModifyExpModal userId={userId} expId={experience._id} experience={experience} />}
+                  {wordUrl === "experiences" && (
+                    <ModifyExpModal userId={userId} expId={experience._id} experience={experience} />
+                  )}
                   <img src={CompanyIcon} style={{ width: "50px" }} alt="Company Logo"></img>
                 </Col>
                 <Col>
