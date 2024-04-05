@@ -1,7 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import LinkedInNavbar from "./components/LinkedInNavbar";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProfilePage from "./components/ProfilePage";
 import "../src/assets/css/style.css";
@@ -13,10 +13,9 @@ import OtherUserProf from "./components/OtherUserProf";
 function App() {
   return (
     <BrowserRouter>
-      <LinkedInNavbar />
       <Routes>
-        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/" element={<Login />} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/profile/experiences/:userId" element={<ExperiencesPage />} />
         <Route path="/home" element={<HomeAndFooterDx />} />
         <Route path="/profile/:userId" element={<OtherUserProf />} />

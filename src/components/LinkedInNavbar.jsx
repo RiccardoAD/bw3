@@ -34,9 +34,11 @@ function LinkedInNavbar() {
             <Container className="d-flex">
               <div className="d-flex align-items-center gap-sm-3">
                 <div className="d-flex me-2">
-                  <Link to="/home">
-                    <img src={linkedinLogo} alt="logo" width="36px" height="36px" className="Logo_navbar_fixed " />
-                  </Link>
+                  <Navbar.Brand href="#home" className= "m-0" width="45px" height="45px">
+                    <Link to="/home">
+                      <img src={linkedinLogo} alt="logo" width="36px" height="36px" className="Logo_navbar_fixed " />
+                    </Link>
+                  </Navbar.Brand>
                 </div>
 
                 <div>
@@ -57,45 +59,57 @@ function LinkedInNavbar() {
                 </div>
               </div>
               <div className="d-md-flex">
-                <Navbar.Toggle aria-controls="responsive-navbar-nav d-flex ms-5" />
-                <Navbar.Collapse className="justify-content gap-2 ms-4">
-                  <div className=" gap-5 d-flex ">
-                    <Nav className="d-md-flex align-items-center ms-4 gap-4">
-                      <div className="icons_navbar">
-                        <Nav.Link to="/home" className="p-0">
-                          <img src={home} alt="home_icon" />
-                          <p className="m-0">Home</p>
-                        </Nav.Link>
-                      </div>
 
-                      <div className="icons_navbar">
-                        <img src={people} alt="network_icon" />
-                        <Nav.Link href="#" className="p-0 fs-6">
-                          <span>Network</span>
-                        </Nav.Link>
-                      </div>
+             <Navbar.Toggle aria-controls="responsive-navbar-nav d-flex" />
+            <Navbar.Collapse className="justify-content gap-2 ms-4">
+                <div className=" gap-5 d-flex ">
+                  <Nav className="d-md-flex align-items-center ms-4 gap-4">
+                    <div className="icons_navbar">
+                      <Link to="/home">
+                        <img src={home} alt="home_icon" />
+                        <Nav.Link  className="p-0"><span>Home</span></Nav.Link>
+                      </Link>
+                    </div>
 
-                      <div className="icons_navbar">
-                        <img src={work} alt="jobs_icon" />
-                        <Nav.Link href="#" className="p-0 fs-6">
-                          <span>Jobs</span>
-                        </Nav.Link>
-                      </div>
+                    <div className="icons_navbar">
+                      <img src={people} alt="network_icon" />
+                      <Nav.Link  href="#" className="p-0 fs-6">
+                        <span>
+                          
+                          Network
+                          </span>
+                      </Nav.Link>
+                    </div>
 
-                      <div className="icons_navbar">
-                        <img src={message} alt="messages_icon" />
-                        <Nav.Link href="#" className="p-0 fs-6">
-                          <span>Messages</span>
-                        </Nav.Link>
-                      </div>
-                      <div className="icons_navbar">
-                        <img src={campana} alt="notification_icon" />
-                        <Nav.Link href="#" className="p-0 fs-6">
-                          <span>Notifications</span>
-                        </Nav.Link>
-                      </div>
-                    </Nav>
-                  </div>
+                    <div className="icons_navbar">
+                      <img src={work} alt="jobs_icon" />
+                      <Nav.Link  href="#" className="p-0 fs-6">
+                        <span
+                        >
+                        Jobs
+
+                        </span>
+                      </Nav.Link>
+                    </div>
+
+                    <div className="icons_navbar">
+                      <img src={message} alt="messages_icon" />
+                      <Nav.Link  href="#" className="p-0 fs-6">
+                        <span>
+                          Messages
+                          </span>
+                      </Nav.Link>
+                    </div>
+                    <div className="icons_navbar">
+                      <img src={campana} alt="notification_icon" />
+                      <Nav.Link  href="#" className="p-0 fs-6">
+                        <span>
+                          Notifications
+                          </span>
+                      </Nav.Link>
+                    </div>
+                  </Nav>
+                </div>
 
                   <div className="icons_navbar">
                     <div className="d-flex justify-content-center ">

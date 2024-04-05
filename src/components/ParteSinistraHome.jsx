@@ -91,11 +91,11 @@ function ParteSinistraHome() {
                   </Col>
                 </Row>
 
-                <Row className="mt-3 align-items-center">
-                  <Col className="d-flex flex-grow-0 p-0 m-0">
-                    <img src={BookmarkIcon} style={{ width: "20px" }} />
+                <Row className=" d- flex mt-3 align-items-center">
+                  <Col className="d-flex flex-grow-0 p-0 m-0 ms-2">
+                   <p> <img src={BookmarkIcon} style={{ width: "20px" }} /></p>
                   </Col>
-                  <Col className="d-flex flex-grow-1">
+                  <Col className="d-flex ">
                     <p className="text-left font-weight-bold mt-0">I miei elementi</p>
                   </Col>
                 </Row>
