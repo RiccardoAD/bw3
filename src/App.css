@@ -164,6 +164,28 @@ html,
   cursor: pointer;
 }
 
+.sectionFooterPosts {
+  text-align: center;
+  padding-block: 10px;
+  color: #666666;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.sectionFooterPosts:hover {
+  background-color: #ebebeb;
+  cursor: pointer;
+}
+
+.followBtn {
+  padding: 5px 10px;
+}
+
+.followBtn:hover {
+  background-color: #ebf3fd;
+  border-radius: 10px;
+}
+
 /* sezione post .parte sinistra  footer home  */
 .postImage {
   width: 50px;
