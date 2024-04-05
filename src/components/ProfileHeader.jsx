@@ -230,7 +230,7 @@ const ProfileHeader = function () {
                           }
                         />
                       </Form.Group>
-                      <Form.Group className="mb-3" controlId="immagine profilo">
+                      {/*  <Form.Group className="mb-3" controlId="immagine profilo">
                         <Form.Label>URL immagine profilo</Form.Label>
                         <Form.Control
                           required
@@ -244,20 +244,19 @@ const ProfileHeader = function () {
                             }))
                           }
                         />
-                      </Form.Group>
+                      </Form.Group> */}
 
-                        <Form.Group className="mb-3" controlId="immagine profilo">
-                        <Form.Label>Carica la tua immagine profilo:</Form.Label>
+                      <Form.Group className="mb-3" controlId="immagine profilo">
+                        <Form.Label>Carica la tua immagine profilo</Form.Label>
                         <Form.Control
                           required
                           type="file"
                           placeholder="Inserisci la tua immagine"
-                        
                           id="avatar"
                           accept="image/*"
                           onChange={handleImageChange}
                         />
-                      </Form.Group> 
+                      </Form.Group>
                     </Form>
 
                     {/*     FINE FORM
