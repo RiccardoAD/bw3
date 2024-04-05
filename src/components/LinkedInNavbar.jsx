@@ -58,48 +58,59 @@ function LinkedInNavbar() {
                   </div>
                 </div>
               </div>
-
               <div className="d-md-flex">
+
+             <Navbar.Toggle aria-controls="responsive-navbar-nav d-flex align-items-center" />
+            <Navbar.Collapse className="justify-content gap-2 ms-4">
                 <div className=" gap-5 d-flex ">
                   <Nav className="d-md-flex align-items-center ms-4 gap-4">
                     <div className="icons_navbar">
                       <Link to="/home">
                         <img src={home} alt="home_icon" />
-                        <Nav.Link className="p-0">Home</Nav.Link>
+                        <Nav.Link  className="p-0"><span>Home</span></Nav.Link>
                       </Link>
                     </div>
 
                     <div className="icons_navbar">
                       <img src={people} alt="network_icon" />
-                      <Nav.Link href="#" className="p-0">
-                        Network
+                      <Nav.Link  href="#" className="p-0 fs-6">
+                        <span>
+                          
+                          Network
+                          </span>
                       </Nav.Link>
                     </div>
 
                     <div className="icons_navbar">
                       <img src={work} alt="jobs_icon" />
-                      <Nav.Link href="#" className="p-0">
+                      <Nav.Link  href="#" className="p-0 fs-6">
+                        <span
+                        >
                         Jobs
+
+                        </span>
                       </Nav.Link>
                     </div>
 
                     <div className="icons_navbar">
                       <img src={message} alt="messages_icon" />
-                      <Nav.Link href="#" className="p-0">
-                        Messages
+                      <Nav.Link  href="#" className="p-0 fs-6">
+                        <span>
+                          Messages
+                          </span>
                       </Nav.Link>
                     </div>
                     <div className="icons_navbar">
                       <img src={campana} alt="notification_icon" />
-                      <Nav.Link href="#" className="p-0">
-                        Notifications
+                      <Nav.Link  href="#" className="p-0 fs-6">
+                        <span>
+                          Notifications
+                          </span>
                       </Nav.Link>
                     </div>
                   </Nav>
                 </div>
 
-                <Navbar.Toggle aria-controls="responsive-navbar-nav " />
-                <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-start gap-2 ms-4">
                   <div className="icons_navbar">
                     <div className="d-flex justify-content-center ">
                       <Link to={"/profile"}>
