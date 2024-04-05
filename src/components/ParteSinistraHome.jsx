@@ -6,6 +6,12 @@ import { Col, Row, Container } from "react-bootstrap";
 import { profileMeAct } from "../redux/actions/profileMeAct";
 import { Link } from "react-router-dom";
 
+import Card from "react-bootstrap/Card";
+import EditPen from "../assets/svg/edit_pen_long.svg";
+import AddIcon from "../assets/svg/add_icon.svg";
+import RightArrow from "../assets/svg/right_arrow_icon.svg";
+import CompanyIcon from "../assets/company_icon.png";
+
 function ParteSinistraHome() {
   const dispatch = useDispatch();
   const profileData = useSelector((state) => state.profileMeRed.profileData);
@@ -88,33 +94,36 @@ function ParteSinistraHome() {
             </Row>
           </Container>
 
-          <Container className="profileContainer mt-3 d-none d-md-block">
-            <Row>
-              <Col>
-                <p className="text-left font-weight-bold mt-0">Recenti</p>
-                <p className="text-left text-muted mb-0">Start up & PMI</p>
-                <p className="text-left text-muted mb-0">Reti di imprese</p>
-                <p className="text-left text-muted mb-0">digichamps</p>
-                <p className="text-left text-muted mb-0">Digital marketing</p>
-                <p className="text-left -bold mt-4 text-primary">Gruppi</p>
-                <p className="text-left text-muted mb-0">Start up & PMI</p>
-                <p className="text-left text-muted mb-0">Reti di imprese</p>
-                <p className="text-left text-muted mb-0">digichamps</p>
-                <p className="text-left text-muted mb-0">Digital marketing</p>
-                <p className="text-left -bold mt-4 text-primary">Eventi</p>
-                <p className="text-left -bold mt-0 text-primary">Hastag seguiti</p>
-                <p className="text-left text-muted mb-0">marketing</p>
-                <p className="text-left text-muted mb-0">sviluppo web</p>
-                <p className="text-left text-muted mb-0">digital marketing</p>
-              </Col>
-            </Row>
-            <hr />
-            <Row>
-              <Col>
-                <p className="text-secondary text-center fw-bold espandi-rete">Scopri di più</p>
-              </Col>
-            </Row>
-          </Container>
+          <Row className="mt-3">
+            <Col>
+              <Card style={{ position: "relative", overflow: "hidden" }}>
+                <div id="otherCards">
+                  <Row className=" border-bottom py-3 align-items-center">
+                    <Col>
+                      <p className="fw-bold text-primary pb-2 fs-5">Recenti</p>
+
+                      <p className="text-left text-muted mb-0">Start up & PMI</p>
+                      <p className="text-left text-muted mb-0">Reti di imprese</p>
+                      <p className="text-left text-muted mb-0">digichamps</p>
+                      <p className="text-left text-muted mb-0">Digital marketing</p>
+                    </Col>
+                  </Row>
+
+                  <Row className="pt-3 align-items-center">
+                    <Col>
+                      <p className="fw-bold text-primary py-1">Gruppi</p>
+                      <p className="fw-bold text-primary py-1">Eventi</p>
+                      <p className="fw-bold text-primary py-1">Hashtag seguiti</p>
+                    </Col>
+                  </Row>
+                </div>
+
+                <Row>
+                  <Col className="col-12 sectionFooter">Scopri di più</Col>
+                </Row>
+              </Card>
+            </Col>
+          </Row>
         </>
       )}
     </>
