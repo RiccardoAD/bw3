@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import FriendIcon from "../assets/svg/addFriend.svg";
 import BookmarkIcon from "../assets/svg/bookmark_icon.svg";
+import PremiumIcon from "../assets/svg/Premium.svg"
 
 function ParteSinistraHome() {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ function ParteSinistraHome() {
                         <img
                           src={profileData.image}
                           alt="ProfileData"
-                          class="position-absolute top-100 start-50 translate-middle img-fluid rounded rounded-circle border border-3 border-white"
+                          className="position-absolute top-100 start-50 translate-middle img-fluid rounded rounded-circle border border-3 border-white"
                           id="miniProfile"
                         />
                       </Link>
@@ -75,7 +76,7 @@ function ParteSinistraHome() {
                   <Col>
                     <div className="d-flex justify-content-between">
                       <p className="text-left text-muted mb-0 fw-bold">
-                        Collegamenti <span className="text-primary">500</span>
+                        Collegamenti <span className="text-primary ms-2">500</span>
                       </p>
                       <img src={FriendIcon} style={{ width: "20px" }} />
                     </div>
@@ -83,20 +84,19 @@ function ParteSinistraHome() {
                   </Col>
                 </Row>
 
-                <Row className="border-bottom mt-3">
+                <Row className="border-bottom mt-3 pb-3">
                   <Col>
                     {/* Accedi a strumenti e info */}
                     <p className="text-left text-muted mb-0">Accedi a strumenti e informazioni in esclusiva</p>
-                    <p className="text-left font-weight-bold mt-0">Riattiva Premium con il 50 % di sconto </p>
+                    <img src={PremiumIcon} className="me-1"></img><span className="text-left fw-bold" style={{fontSize: "12px"}}>Prova Premium per 0 EUR </span>
                   </Col>
                 </Row>
 
-                <Row className="mt-3 align-items-center">
-                  <Col className="d-flex flex-grow-0 p-0 m-0">
+                <Row className="my-3 justify-content-start align-items-center">
+                  <Col>
                     <img src={BookmarkIcon} style={{ width: "20px" }} />
-                  </Col>
-                  <Col className="d-flex flex-grow-1">
-                    <p className="text-left font-weight-bold mt-0">I miei elementi</p>
+
+                    <span className="fw-bold ms-2">I miei elementi</span>
                   </Col>
                 </Row>
               </Col>
