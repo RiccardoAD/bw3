@@ -40,7 +40,7 @@ html,
   border-radius: 50%;
   overflow: hidden;
   border: 5px solid white;
-  top: 5.5rem;
+  top: 7.5rem;
   left: 2rem;
   width: 130px;
   height: 130px;
@@ -57,7 +57,7 @@ html,
     border-radius: 50%;
     overflow: hidden;
     border: 5px solid white;
-    top: 3.5rem;
+    top: 5.5rem;
     left: 2rem;
     width: 160px;
     height: 160px;
@@ -113,13 +113,13 @@ html,
 .timeAndLocation {
   color: #666666;
   font-size: 0.9rem;
-  margin-top: -0.5rem;
+  margin-top: -0.2rem;
 }
 
 .editIcon {
   position: absolute;
   right: 1rem;
-  top: 11rem;
+  top: 13rem;
   padding: 8px;
 }
 

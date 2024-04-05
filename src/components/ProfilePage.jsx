@@ -7,11 +7,13 @@ import ExperienceComponent from "./ExperienceComponent";
 import Formazione from "./Formazione";
 import ProfileDexSideBar from "./ProfileDexSideBar";
 import FooterProfile from "./FooterProfile";
+import Competenze from "./Competenze";
+import Interessi from "./Interessi";
 
 const ProfilePage = function () {
   return (
     <Container className="mt-5">
-      <Row className="d-flex pt-4">
+      <Row className="d-flex pt-4 justify-content-center">
         <Col className="col-md-7 col-lg-8 xxl-9">
           <Row className="gy-2">
             <Col className="col-12">
@@ -31,6 +33,12 @@ const ProfilePage = function () {
             </Col>
             <Col className="col-12">
               <Formazione />
+            </Col>
+            <Col className="col-12">
+              <Competenze />
+            </Col>
+            <Col className="col-12">
+              <Interessi />
             </Col>
           </Row>
         </Col>

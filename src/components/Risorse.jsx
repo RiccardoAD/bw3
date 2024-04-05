@@ -21,7 +21,7 @@ const Risorse = function () {
             <Row className="d-flex justify-content-start gy-4">
               <Col className="col-12 border-bottom pb-3">
                 <Row>
-                  <Col className="col-1">
+                  <Col className="col-1 d-flex justify-content-center align-items-center">
                     <img src={PeopleIcon} />
                   </Col>
                   <Col>
@@ -33,7 +33,7 @@ const Risorse = function () {
 
               <Col className="col-12">
                 <Row>
-                  <Col className="col-1">
+                  <Col className="col-1 d-flex justify-content-center align-items-center">
                     <img src={BookmarkIcon} />
                   </Col>
                   <Col>

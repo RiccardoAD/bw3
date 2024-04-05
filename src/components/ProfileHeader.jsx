@@ -11,18 +11,16 @@ import { profileMeAct } from "../redux/actions/profileMeAct";
 import { putImg } from "../redux/actions/images";
 
 const ProfileHeader = function () {
-
-  const [avatar, setAvatar] = useState(null);
-
+  /* const [avatar, setAvatar] = useState(null);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setAvatar(file);
-};
+  }; */
 
   const dispatch = useDispatch();
   const profileData = useSelector((state) => state.profileMeRed.profileData);
-  
+
   const [formData, setFormData] = useState({
     name: "",
     surname: "",
@@ -54,13 +52,10 @@ const ProfileHeader = function () {
     }
   }, [profileData]);
 
-
   const handleSubmit = async (event) => {
-    const formData = new FormData();
+    /* const formData = new FormData();
     formData.append("profile", avatar);
-    dispatch(putImg(profileData._id, formData));
-
-
+    dispatch(putImg(profileData._id, formData)); */
 
     const form = event.currentTarget;
 
@@ -94,7 +89,7 @@ const ProfileHeader = function () {
       }
       const updatedProfileData = await response.json();
       console.log("Profile updated successfully:", updatedProfileData);
-     
+
       setFormData(updatedProfileData);
       handleClose();
       window.location.reload();
@@ -109,7 +104,12 @@ const ProfileHeader = function () {
         <Card style={{ position: "relative" }}>
           {profileData && (
             <>
-              <Card.Img variant="top" style={{ height: "10rem", backgroundColor: "black"}} className="img-fluid" />
+              <Card.Img
+                variant="top"
+                style={{ height: "12rem", backgroundColor: "black" }}
+                src="https://images.unsplash.com/photo-1593328125760-2a9bf6288fb2?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                className="object-fit-cover"
+              />
               <div id="profilePicture">
                 <img src={profileData.image} alt="Profile" className="img-fluid" />
               </div>
@@ -246,17 +246,18 @@ const ProfileHeader = function () {
                         />
                       </Form.Group>
 
-                      <Form.Group className="mb-3" controlId="immagine profilo">
-                        <Form.Label>URL immagine profilo</Form.Label>
+                     {/*  <Form.Group className="mb-3" controlId="immagine profilo">
+                        <Form.Label>Carica la tua immagine profilo:</Form.Label>
                         <Form.Control
                           required
                           type="file"
                           placeholder="Inserisci la tua immagine"
-                          /* value={formData.image} */
-                          id="avatar" accept="image/*" onChange={handleImageChange}
+                          value={formData.image}
+                          id="avatar"
+                          accept="image/*"
+                          onChange={handleImageChange}
                         />
-                      </Form.Group>
-
+                      </Form.Group> */}
                     </Form>
 
                     {/*     FINE FORM

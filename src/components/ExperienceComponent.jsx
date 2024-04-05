@@ -63,7 +63,7 @@ const ExperienceComponent = function () {
     <Row>
       <Col>
         <Card style={{ position: "relative", overflow: "hidden" }}>
-          <div id="otherCards">
+          <div id="otherCards" style={{paddingBottom: "0.2rem"}}>
             <Row>
               <Col>
                 {/*  PULSANTE "+" E MODALE D'AGGIUNTA CHE SI MOSTRA SOLO NELLA PAGINA DI MODIFICA */}
@@ -86,8 +86,8 @@ const ExperienceComponent = function () {
 
             {/* ESPERIENZE STATICHE DA MAPPARE NON APPENA ABBIAMO LA FECTH: */}
             {experiences.map((experience) => (
-              <Row key={experience._id} className="border-bottom py-3" style={{ position: "relative" }}>
-                <Col className="col-2 col-lg-1">
+              <Row key={experience._id} className="border-top py-3" style={{ position: "relative" }}>
+                <Col className="col-2 col-lg-1 d-flex justify-content-center align-items-start">
                   {params.userId && profileData && (
                     <ModifyExpModal userId={profileData._id} expId={experience._id} experience={experience} />
                   )}

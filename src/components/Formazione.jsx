@@ -24,11 +24,11 @@ const Formazione = function () {
             </Row>
 
             <Row className=" border-bottom py-3">
-              <Col className="col-2 col-lg-1">
+              <Col className="col-2 col-lg-1 d-flex justify-content-center align-items-start">
                 <img src={CompanyIcon} style={{ width: "50px" }}></img>
               </Col>
               <Col>
-                <p className="fw-bold">Mansione</p>
+                <p className="fw-bold">Università</p>
                 <p className="timeAndLocation">Periodo</p>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, dolor alias quaerat, dolore quam amet
@@ -39,11 +39,11 @@ const Formazione = function () {
             </Row>
 
             <Row className="py-3">
-              <Col className="col-2 col-lg-1">
+              <Col className="col-2 col-lg-1 d-flex justify-content-center align-items-start">
                 <img src={CompanyIcon} style={{ width: "50px" }}></img>
               </Col>
               <Col>
-                <p className="fw-bold">Mansione</p>
+                <p className="fw-bold">Diploma superiore</p>
                 <p className="timeAndLocation">Periodo</p>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, dolor alias quaerat, dolore quam amet
@@ -56,7 +56,7 @@ const Formazione = function () {
 
           <Row>
             <Col className="col-12 sectionFooter">
-              Mostra tutte le esperienze
+              Mostra tutta la formazione
               <img src={RightArrow} style={{ marginLeft: "10px" }}></img>
             </Col>
           </Row>
