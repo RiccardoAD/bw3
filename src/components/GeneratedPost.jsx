@@ -7,6 +7,7 @@ import Spinner from "./Spinner";
 import Card from "react-bootstrap/Card";
 import EditPen from "../assets/svg/edit_pen_long.svg";
 import DotsIcon from "../assets/svg/dots_icon.svg";
+import { Link } from "react-router-dom";
 
 const GeneratedPost = () => {
   let results = useSelector((state) => state.post.postState);
@@ -45,10 +46,14 @@ const GeneratedPost = () => {
                       ></img>
                       <img src={EditPen} className="editIcon" style={{ position: "absolute", top: "0.5rem" }}></img>
 
-                      <img src={p.user.image} alt="" className="asideImg rounded-circle" />
-                    </Col>{" "}
+                      <Link to={`/profile/${p.user._id}`} style={{ textDecoration: "none" }}>
+                        <img src={p.user.image} alt="" className="asideImg rounded-circle" />
+                      </Link>
+                    </Col>
                     <Col>
-                      <p className="fw-bold ms-1 mt-1">{p.username}</p>
+                      <Link to={`/profile/${p.user._id}`} style={{ textDecoration: "none" }}>
+                        <p className="fw-bold ms-1 mt-1 text-black">{p.username}</p>
+                      </Link>
                       <p className="ms-1 text-secondary">{p.user.title}</p>
                     </Col>
                     <Col className="d-flex">
