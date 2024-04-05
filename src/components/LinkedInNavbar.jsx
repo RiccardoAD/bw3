@@ -63,10 +63,10 @@ function LinkedInNavbar() {
                 <div className=" gap-5 d-flex ">
                   <Nav className="d-md-flex align-items-center ms-4 gap-4">
                     <div className="icons_navbar">
-                      <img src={home} alt="home_icon" />
-                      <Nav.Link as={Link} to="/home" className="p-0">
-                        Home
-                      </Nav.Link>
+                      <Link to="/home">
+                        <img src={home} alt="home_icon" />
+                        <Nav.Link className="p-0">Home</Nav.Link>
+                      </Link>
                     </div>
 
                     <div className="icons_navbar">

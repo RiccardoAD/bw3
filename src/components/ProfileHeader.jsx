@@ -230,7 +230,7 @@ const ProfileHeader = function () {
                           }
                         />
                       </Form.Group>
-                      {/*  <Form.Group className="mb-3" controlId="immagine profilo">
+                      {/* <Form.Group className="mb-3" controlId="immagine profilo">
                         <Form.Label>URL immagine profilo</Form.Label>
                         <Form.Control
                           required
