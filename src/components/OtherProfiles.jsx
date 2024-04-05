@@ -14,15 +14,26 @@ function OtherProfiles() {
 
   console.log("Profiles:", tuttiIProfili);
 
+  const shuffleArray = (array) => {
+    const shuffledArray = array.slice();
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+    }
+    return shuffledArray;
+  };
+
   return (
     <>
       <Row className="border border-bottom-0 rounded-top bg-white px-4">
         <Col xs={12} className="pt-4">
           <p className="fw-bold m-0">Altri profili simili</p>
         </Col>
-        {tuttiIProfili.slice(0, 5).map((unProfilo) => (
-          <ProfileFetch key={unProfilo._id} profileData={unProfilo} />
-        ))}
+        {shuffleArray(tuttiIProfili)
+          .slice(0, 5)
+          .map((unProfilo) => (
+            <ProfileFetch key={unProfilo._id} profileData={unProfilo} />
+          ))}
       </Row>
       <Row>
         <Col xs={12} className="text-center p-0 border border-top-0 rounded-bottom">
