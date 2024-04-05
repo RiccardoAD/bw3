@@ -5,11 +5,14 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { CaretDownFill, Clock } from "react-bootstrap-icons";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { profileMeAct } from "../redux/actions/profileMeAct"
+import { useEffect } from "react";
 
 const AddPost = () => {
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
+  const profileData = useSelector((state) => state.profileMeRed.profileData);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -17,6 +20,10 @@ const AddPost = () => {
   const [localPost, setLocalPost] = useState({
     text: "",
   });
+
+  useEffect(() => {
+    dispatch(profileMeAct());
+  }, [dispatch]);
 
   const handlePost = (event) => {
     event.preventDefault();
@@ -26,12 +33,14 @@ const AddPost = () => {
 
   return (
     <>
-      <Container className="bg-white rounded-3 pt-3 mb-3 ">
+      {profileData && (
+        <>
+      <Container className="bg-white rounded-3 pt-3 my-3 ">
         <Container>
           <Row>
             <Col xs={1} className="me-2 ps-2 d-flex">
               <img
-                src="https://placedog.net/916?id=141"
+                src={profileData.image}
                 alt="profileImage"
                 className="rounded rounded-circle postImage"
               />
@@ -49,11 +58,11 @@ const AddPost = () => {
                 <Modal.Header closeButton className="border-0">
                   <Modal.Title>
                     <img
-                      src="https://placedog.net/916?id=141"
+                      src={profileData.image}
                       alt="profileImage"
                       className=" rounded rounded-circle postImage me-2"
                     />
-                    Nome utente
+                    {profileData.name}{profileData.surname}
                     <CaretDownFill className="ms-2 text-secondary fs-5" />
                   </Modal.Title>
                 </Modal.Header>
@@ -134,6 +143,8 @@ const AddPost = () => {
         </Container>
       </Container>
     </>
+       )}
+       </>
   );
 };
 

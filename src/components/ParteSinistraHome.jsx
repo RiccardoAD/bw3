@@ -18,7 +18,7 @@ function ParteSinistraHome() {
       {profileData && (
         <>
           <Container>
-            <Row className="profileContainer">
+            <Row className="profileContainer mt-3">
               <Col>
                 <Row className="">
                   <div className=" p-0 cursor">
