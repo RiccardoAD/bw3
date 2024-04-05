@@ -45,7 +45,7 @@ const Login = () => {
 
   return (
     <div className="login-container mt-5 pt-5" id="sfondobianco">
-      {userPassword === true && navigate("/")}
+      {userPassword === true && navigate("/home")}
 
       <div className="login-form">
         <img
