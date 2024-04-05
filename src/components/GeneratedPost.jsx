@@ -29,7 +29,7 @@ const GeneratedPost = () => {
   }, [dispatch, results.length]);
 
   let resultsSlice = results.slice(randomSlice.start, randomSlice.end);
-  console.log(resultsSlice);
+  console.log("RESULTS SLICE", resultsSlice);
 
   return (
     <>
@@ -50,7 +50,7 @@ const GeneratedPost = () => {
                       ></img>
                       <img src={EditPen} className="editIcon" style={{ position: "absolute", top: "0.5rem" }}></img>
 
-                      <img src={p.image} alt="" className="asideImg rounded-circle" />
+                      <img src={p.user.image} alt="" className="asideImg rounded-circle" />
                     </Col>{" "}
                     <Col>
                       <p className="fw-bold ms-1 mt-1">{p.username}</p>

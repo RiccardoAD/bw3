@@ -88,7 +88,7 @@ function ParteSinistraHome() {
             </Row>
           </Container>
 
-          <Container className="profileContainer mt-3">
+          <Container className="profileContainer mt-3 d-none d-md-block">
             <Row>
               <Col>
                 <p className="text-left font-weight-bold mt-0">Recenti</p>
