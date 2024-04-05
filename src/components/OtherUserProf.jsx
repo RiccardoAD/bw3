@@ -9,6 +9,7 @@ import OtherHeaderProf from "./OtherHeaderProf";
 import OtherProfSideBar from "./OtherProfSideBar";
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import LinkedInNavbar from "./LinkedInNavbar";
 
 const OtherUserProf = function () {
   const [profileData, setProfileData] = useState(null);
@@ -48,34 +49,37 @@ const OtherUserProf = function () {
   }, []);
 
   return (
-    <Container className="mt-5">
-      <Row className="d-flex pt-4 justify-content-center">
-        <Col className="col-md-7 col-lg-8 xxl-9">
-          <Row className="gy-2">
-            <Col className="col-12">{profileData && <OtherHeaderProf profileData={profileData} />}</Col>
-            <Col className="col-12">
-              <Informazioni />
-            </Col>
-            <Col className="col-12">{profileData && <ExperienceComponent userId={profileData._id} />}</Col>
-            <Col className="col-12">
-              <Formazione />
-            </Col>
-            <Col className="col-12">
-              <Competenze />
-            </Col>
-            <Col className="col-12">
-              <Interessi />
-            </Col>
+    <>
+      <LinkedInNavbar />
+      <Container className="mt-5">
+        <Row className="d-flex pt-4 justify-content-center">
+          <Col className="col-md-7 col-lg-8 xxl-9">
+            <Row className="gy-2">
+              <Col className="col-12">{profileData && <OtherHeaderProf profileData={profileData} />}</Col>
+              <Col className="col-12">
+                <Informazioni />
+              </Col>
+              <Col className="col-12">{profileData && <ExperienceComponent userId={profileData._id} />}</Col>
+              <Col className="col-12">
+                <Formazione />
+              </Col>
+              <Col className="col-12">
+                <Competenze />
+              </Col>
+              <Col className="col-12">
+                <Interessi />
+              </Col>
+            </Row>
+          </Col>
+          <Col className="col-md-5 col-lg-4 xxl-3 d-none d-md-block">
+            <OtherProfSideBar />
+          </Col>
+          <Row>
+            <FooterProfile />
           </Row>
-        </Col>
-        <Col className="col-md-5 col-lg-4 xxl-3 d-none d-md-block">
-          <OtherProfSideBar />
-        </Col>
-        <Row>
-          <FooterProfile />
         </Row>
-      </Row>
-    </Container>
+      </Container>
+    </>
   );
 };
 

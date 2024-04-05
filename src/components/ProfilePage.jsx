@@ -54,6 +54,12 @@ const ProfilePage = function () {
               </Col>
             </Row>
           </Col>
+          <Col className="col-md-5 col-lg-4 xxl-3 d-none d-md-block">
+            <ProfileDexSideBar />
+          </Col>
+          <Row>
+            <FooterProfile />
+          </Row>
         </Row>
       </Container>
     </>
