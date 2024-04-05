@@ -34,7 +34,7 @@ function LinkedInNavbar() {
             <Container className="d-flex">
               <div className="d-flex align-items-center gap-sm-3">
                 <div className="d-flex me-2">
-                  <Navbar.Brand href="#home" className="container_logo_navbar_fixed m-0" width="45px" height="45px">
+                  <Navbar.Brand href="#home" className= "m-0" width="45px" height="45px">
                     <Link to="/home">
                       <img src={linkedinLogo} alt="logo" width="36px" height="36px" className="Logo_navbar_fixed " />
                     </Link>
@@ -60,7 +60,7 @@ function LinkedInNavbar() {
               </div>
               <div className="d-md-flex">
 
-             <Navbar.Toggle aria-controls="responsive-navbar-nav d-flex align-items-center" />
+             <Navbar.Toggle aria-controls="responsive-navbar-nav d-flex ms-5" />
             <Navbar.Collapse className="justify-content gap-2 ms-4">
                 <div className=" gap-5 d-flex ">
                   <Nav className="d-md-flex align-items-center ms-4 gap-4">
