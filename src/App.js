@@ -1,6 +1,5 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import LinkedInNavbar from "./components/LinkedInNavbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProfilePage from "./components/ProfilePage";

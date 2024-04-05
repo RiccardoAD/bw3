@@ -9,8 +9,19 @@ import ProfileDexSideBar from "./ProfileDexSideBar";
 import FooterProfile from "./FooterProfile";
 import Competenze from "./Competenze";
 import Interessi from "./Interessi";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { profileMeAct } from "../redux/actions/profileMeAct";
 
 const ProfilePage = function () {
+  /*  FETCH CON REDUX */
+  const profileData = useSelector((state) => state.profileMeRed.profileData);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(profileMeAct());
+  }, [dispatch]);
+
   return (
     <Container className="mt-5">
       <Row className="d-flex pt-4 justify-content-center">
@@ -28,9 +39,7 @@ const ProfilePage = function () {
             <Col className="col-12">
               <Informazioni />
             </Col>
-            <Col className="col-12">
-              <ExperienceComponent />
-            </Col>
+            <Col className="col-12">{profileData && <ExperienceComponent userId={profileData._id} />}</Col>
             <Col className="col-12">
               <Formazione />
             </Col>
