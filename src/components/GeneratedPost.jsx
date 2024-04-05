@@ -5,6 +5,12 @@ import { Row, Col } from "react-bootstrap";
 import { Chat, HandThumbsUp, Share, Send } from "react-bootstrap-icons";
 import Spinner from "./Spinner";
 
+import Card from "react-bootstrap/Card";
+import EditPen from "../assets/svg/edit_pen_long.svg";
+import AddIcon from "../assets/svg/add_icon.svg";
+import DotsIcon from "../assets/svg/dots_icon.svg";
+import CompanyIcon from "../assets/company_icon.png";
+
 const GeneratedPost = () => {
   let results = useSelector((state) => state.post.postState);
   console.log(results);
@@ -35,35 +41,64 @@ const GeneratedPost = () => {
             <Spinner />
           ) : (
             resultsSlice.map((p, index) => (
-              <Row key={index} className="bg-white mb-2 rounded border border-secondary-light mx-1">
-                <Col className="d-flex">
-                  <img src={p.image} alt="" className="asideImg rounded-circle mx-2 mt-2" />
-                  <div>
-                    <p className="fw-bold ms-1 mt-1">{p.username}</p>
-                    <p className="ms-1 text-secondary">{p.user.title}</p>
-                  </div>
-                  <p className="ms-auto me-2 mt-1 text-primary fw-bold">Segui</p>
-                </Col>
-                <p className="mx-2">{p.text}</p>
-                <hr />
-                <div className="d-flex justify-content-between mx-2 align-items-center text-secondary">
-                  <p className="commenti-home">
-                    <HandThumbsUp className="me-1" />
-                    Consiglia
-                  </p>
-                  <p className="commenti-home">
-                    <Chat className="me-1" />
-                    Commenta
-                  </p>{" "}
-                  <p className="commenti-home">
-                    <Share className="me-1" />
-                    Diffondi post
-                  </p>
-                  <p className="commenti-home">
-                    <Send className="me-1" /> Invia
-                  </p>
+              <Card style={{ position: "relative", overflow: "hidden" }} key={index} id="otherCards" className="mt-3">
+                <div id="otherCards" style={{padding: "1rem"}}>
+                  <Row className="align-items-center pt-1 pb-4 border-bottom">
+                    <Col className="col-1 me-4 me-lg-3 me-xxl-1 p-0">
+                      <img
+                        src={DotsIcon}
+                        className="editIcon"
+                        style={{ position: "absolute", top: "0.5rem", right: "4rem" }}
+                      ></img>
+                      <img src={EditPen} className="editIcon" style={{ position: "absolute", top: "0.5rem" }}></img>
+
+                      <img src={p.image} alt="" className="asideImg rounded-circle" />
+                    </Col>{" "}
+                    <Col>
+                      <p className="fw-bold ms-1 mt-1">{p.username}</p>
+                      <p className="ms-1 text-secondary">{p.user.title}</p>
+                      </Col>
+                      <Col className="d-flex">
+
+                      <p className="ms-auto mt-1 text-primary fw-bold followBtn">+ Segui</p>
+                    </Col>
+                  </Row>
+
+                  <Row className="mt-2">
+                    <Col className="col-12 d-flex justify-content-start align-items-start">
+                      <p className="mt-3">{p.text}</p>
+                    </Col>
+                  </Row>
                 </div>
-              </Row>
+
+                <Row className="mt-2 border-top">
+                  <Col>
+                    <p className="sectionFooterPosts mt-2">
+                      <HandThumbsUp className="me-1" />
+                      Consiglia
+                    </p>
+                    </Col>
+
+                    <Col>
+    
+                    <p className="sectionFooterPosts mt-2">
+                      <Chat className="me-1" />
+                      Commenta
+                    </p></Col>
+                    <Col>
+                    <p className="sectionFooterPosts mt-2">
+                      <Share className="me-1" />
+                      Diffondi post
+                    </p>
+                    </Col>
+                    <Col>
+                  
+                    <p className="sectionFooterPosts mt-2">
+                      <Send className="me-1" /> Invia
+                    </p>
+                  </Col>
+                </Row>
+              </Card>
             ))
           )}
         </Col>
