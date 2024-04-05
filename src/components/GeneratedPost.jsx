@@ -40,7 +40,7 @@ const GeneratedPost = () => {
           ) : (
             resultsSlice.map((p, index) => (
               <Card style={{ position: "relative", overflow: "hidden" }} key={index} id="otherCards" className="mt-3">
-                <div id="otherCards" style={{padding: "1rem"}}>
+                <div id="otherCards" style={{ padding: "1rem" }}>
                   <Row className="align-items-center pt-1 pb-4 border-bottom">
                     <Col className="col-1 me-4 me-lg-3 me-xxl-1 p-0">
                       <img
@@ -55,9 +55,8 @@ const GeneratedPost = () => {
                     <Col>
                       <p className="fw-bold ms-1 mt-1">{p.username}</p>
                       <p className="ms-1 text-secondary">{p.user.title}</p>
-                      </Col>
-                      <Col className="d-flex">
-
+                    </Col>
+                    <Col className="d-flex">
                       <p className="ms-auto mt-1 text-primary fw-bold followBtn">+ Segui</p>
                     </Col>
                   </Row>
@@ -75,22 +74,21 @@ const GeneratedPost = () => {
                       <HandThumbsUp className="me-1" />
                       Consiglia
                     </p>
-                    </Col>
+                  </Col>
 
-                    <Col>
-    
+                  <Col>
                     <p className="sectionFooterPosts mt-2">
                       <Chat className="me-1" />
                       Commenta
-                    </p></Col>
-                    <Col>
+                    </p>
+                  </Col>
+                  <Col>
                     <p className="sectionFooterPosts mt-2">
                       <Share className="me-1" />
                       Diffondi post
                     </p>
-                    </Col>
-                    <Col>
-                  
+                  </Col>
+                  <Col>
                     <p className="sectionFooterPosts mt-2">
                       <Send className="me-1" /> Invia
                     </p>
@@ -102,21 +100,19 @@ const GeneratedPost = () => {
         </Col>
       </Row>
       <Row>
-        <Col>
-          <div className="my-4 text-center">
-            <span
-              className="altri-post rounded-pill fw-bold "
-              onClick={() => {
-                if (results.length > 8) {
-                  const maxStartIndex = results.length - 8;
-                  const start = Math.floor(Math.random() * maxStartIndex);
-                  setRandomSlice({ start, end: start + 8 });
-                }
-              }}
-            >
-              Vedi altri post
-            </span>
-          </div>
+        <Col className="my-4 text-center">
+          <button
+            className="secondaryBtn"
+            onClick={() => {
+              if (results.length > 8) {
+                const maxStartIndex = results.length - 8;
+                const start = Math.floor(Math.random() * maxStartIndex);
+                setRandomSlice({ start, end: start + 8 });
+              }
+            }}
+          >
+            Vedi altri post
+          </button>
         </Col>
       </Row>
     </>
