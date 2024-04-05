@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import FriendIcon from "../assets/svg/addFriend.svg";
 import BookmarkIcon from "../assets/svg/bookmark_icon.svg";
-import PremiumIcon from "../assets/svg/Premium.svg"
+import PremiumIcon from "../assets/svg/Premium.svg";
 
 function ParteSinistraHome() {
   const dispatch = useDispatch();
@@ -72,7 +72,7 @@ function ParteSinistraHome() {
                   </Col>
                 </Row>
 
-                <Row className="border-bottom mt-3">
+                <Row className="border-bottom pt-3 grayHover">
                   <Col>
                     <div className="d-flex justify-content-between">
                       <p className="text-left text-muted mb-0 fw-bold">
@@ -84,15 +84,18 @@ function ParteSinistraHome() {
                   </Col>
                 </Row>
 
-                <Row className="border-bottom mt-3 pb-3">
+                <Row className="border-bottom pt-3 pb-3 grayHover">
                   <Col>
                     {/* Accedi a strumenti e info */}
                     <p className="text-left text-muted mb-0">Accedi a strumenti e informazioni in esclusiva</p>
-                    <img src={PremiumIcon} className="me-1"></img><span className="text-left fw-bold" style={{fontSize: "12px"}}>Prova Premium per 0 EUR </span>
+                    <img src={PremiumIcon} className="me-1"></img>
+                    <span className="text-left fw-bold" style={{ fontSize: "12px" }}>
+                      Prova Premium per 0 EUR{" "}
+                    </span>
                   </Col>
                 </Row>
 
-                <Row className="my-3 justify-content-start align-items-center">
+                <Row className="py-3 justify-content-start align-items-center grayHover">
                   <Col>
                     <img src={BookmarkIcon} style={{ width: "20px" }} />
 
@@ -103,7 +106,7 @@ function ParteSinistraHome() {
             </Row>
           </Container>
 
-          <Row className="mt-3">
+          <Row className="mt-3 d-none d-md-block">
             <Col>
               <Card style={{ position: "relative", overflow: "hidden" }}>
                 <div id="otherCards">

@@ -177,6 +177,11 @@ html,
   cursor: pointer;
 }
 
+.grayHover:hover {
+  background-color: #ebebeb;
+  cursor: pointer;
+}
+
 .followBtn {
   padding: 5px 10px;
 }
