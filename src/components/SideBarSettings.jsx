@@ -19,8 +19,8 @@ function SideBarSettings() {
           <p className="fw-bold m-0">Profilo pubblico e URL</p>
           <img src={EditPen} className="btn py-0"></img>
         </Col>
-        <Col xs={12}>
-          <p className="m-0">{profileUrl}</p>
+        <Col xs={12} className="overflow-hidden">
+          <p className="m-0 ">{profileUrl}</p>
         </Col>
       </Row>
     </Row>
