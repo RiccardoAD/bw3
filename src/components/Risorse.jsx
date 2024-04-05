@@ -56,4 +56,4 @@ const Risorse = function () {
   );
 };
 
-export default Risorse
+export default Risorse;

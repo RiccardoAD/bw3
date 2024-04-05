@@ -1,7 +1,5 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProfilePage from "./components/ProfilePage";
 import "../src/assets/css/style.css";

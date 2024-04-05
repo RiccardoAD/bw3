@@ -1,13 +1,17 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import EditPen from "../assets/svg/edit_pen_long.svg";
+import { useParams } from "react-router-dom";
 
 const Informazioni = function () {
+  const params = useParams();
   return (
     <Row>
       <Col>
         <Card style={{ position: "relative", overflow: "hidden" }}>
-          <img src={EditPen} className="editIcon" style={{ position: "absolute", top: "1rem" }}></img>
+          {!params.userId && (
+            <img src={EditPen} className="editIcon" style={{ position: "absolute", top: "1rem" }}></img>
+          )}
           <div id="otherCards">
             <h5 className="fw-bold pb-2">Informazioni</h5>
 

@@ -1,11 +1,13 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import EditPen from "../assets/svg/edit_pen_long.svg";
 import AddIcon from "../assets/svg/add_icon.svg";
 import RightArrow from "../assets/svg/right_arrow_icon.svg";
 import CompanyIcon from "../assets/company_icon.png";
+import { useParams } from "react-router-dom";
 
 const Competenze = function () {
+  const params = useParams();
   return (
     <Row>
       <Col>
@@ -13,12 +15,16 @@ const Competenze = function () {
           <div id="otherCards">
             <Row>
               <Col>
-                <img
-                  src={AddIcon}
-                  className="editIcon"
-                  style={{ position: "absolute", top: "1rem", right: "4rem" }}
-                ></img>
-                <img src={EditPen} className="editIcon" style={{ position: "absolute", top: "1rem" }}></img>
+                {!params.userId && (
+                  <>
+                    <img
+                      src={AddIcon}
+                      className="editIcon"
+                      style={{ position: "absolute", top: "1rem", right: "4rem" }}
+                    ></img>
+                    <img src={EditPen} className="editIcon" style={{ position: "absolute", top: "1rem" }}></img>
+                  </>
+                )}
                 <h5 className="fw-bold pb-2">Competenze</h5>
               </Col>
             </Row>
@@ -29,10 +35,8 @@ const Competenze = function () {
               </Col>
               <Col>
                 <p className="fw-bold">Competenze analitiche</p>
-                
-                <p>
-                  Competenze da freelance e presso aziende.
-                </p>
+
+                <p>Competenze da freelance e presso aziende.</p>
               </Col>
             </Row>
 
@@ -43,9 +47,7 @@ const Competenze = function () {
               <Col>
                 <p className="fw-bold">Competenze pratiche</p>
 
-                <p>
-                  Competenze maturate durante le esperienze lavorative.
-                </p>
+                <p>Competenze maturate durante le esperienze lavorative.</p>
               </Col>
             </Row>
           </div>

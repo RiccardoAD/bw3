@@ -16,6 +16,9 @@ function OtherProfSideBar() {
         <Col xs={12}>
           <ProfilesSugg />
         </Col>
+        <Col xs={12} className="p-0">
+          <img src={ImgAdv} alt="Adv" className="w-100 rounded img-fluid" />
+        </Col>
       </Row>
     </Container>
   );
