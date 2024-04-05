@@ -11,9 +11,8 @@ export const profileFetch = (id) => {
         method: "GET",
         headers: {
           Authorization:
-           
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBkNWU2MGY5NGY0YTAwMTkzNzkxZDYiLCJpYXQiOjE3MTIxNTIxNjAsImV4cCI6MTcxMzM2MTc2MH0.RcnjBt8Rp9rbpgktsZhm9U5HzwymeiRgeKD0WWAT-Rg",
-          
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzlhYWEyODFkODAwMTlhM2VjNTciLCJpYXQiOjE3MTIwNDg1NTQsImV4cCI6MTcxMzI1ODE1NH0.6sHKqviDfFSd8qv2L8aNnu7plOcEuiqkhnhPbe72vKw",
+
           "Content-Type": "application/json",
         },
       });
@@ -31,39 +30,33 @@ export const profileFetch = (id) => {
 };
 
 export const updateProfile = (updatedProfileData) => {
-    return async (dispatch) => {
-      console.log("inizia il PUT");
-      try {
-        let response = await fetch(
-          "https://striveschool-api.herokuapp.com/api/profile/" +
-            {
-              method: "PUT",
-              headers: {
-                Authorization:
-                 
-                
-                
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBkNWU2MGY5NGY0YTAwMTkzNzkxZDYiLCJpYXQiOjE3MTIxNTIxNjAsImV4cCI6MTcxMzM2MTc2MH0.RcnjBt8Rp9rbpgktsZhm9U5HzwymeiRgeKD0WWAT-Rg",
-              
-              
-                "Content-Type": "application/json",
+  return async (dispatch) => {
+    console.log("inizia il PUT");
+    try {
+      let response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile/" +
+          {
+            method: "PUT",
+            headers: {
+              Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzlhYWEyODFkODAwMTlhM2VjNTciLCJpYXQiOjE3MTIwNDg1NTQsImV4cCI6MTcxMzI1ODE1NH0.6sHKqviDfFSd8qv2L8aNnu7plOcEuiqkhnhPbe72vKw",
 
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(updatedProfileData),
+          }
+      );
+      console.log(updatedProfileData);
 
-              },
-              body: JSON.stringify(updatedProfileData),
-            }
-        );
-        console.log(updatedProfileData);
-  
-        if (response.ok) {
-          let result = await response.json();
-          console.log(result);
-          dispatch({ type: SET_PROFILE, payload: result });
-        } else {
-          throw new Error("Aggiornamento Profilo Fallito");
-        }
-      } catch (error) {
-        console.error("Error", error);
+      if (response.ok) {
+        let result = await response.json();
+        console.log(result);
+        dispatch({ type: SET_PROFILE, payload: result });
+      } else {
+        throw new Error("Aggiornamento Profilo Fallito");
       }
-    };
+    } catch (error) {
+      console.error("Error", error);
+    }
   };
+};

@@ -15,12 +15,10 @@ function App() {
       <LinkedInNavbar />
       <Routes>
         <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
         <Route path="/profile/experiences/:userId" element={<ExperiencesPage />} />
-        <Route path="/" element={<HomeAndFooterDx />} />
+        <Route path="/home" element={<HomeAndFooterDx />} />
       </Routes>
-
-      
     </BrowserRouter>
   );
 }

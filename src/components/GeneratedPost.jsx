@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import post from "../redux/actions/post";
 import { Row, Col } from "react-bootstrap";
 import { Chat, HandThumbsUp, Share, Send } from "react-bootstrap-icons";
 import Spinner from "./Spinner";
-
 import Card from "react-bootstrap/Card";
 import EditPen from "../assets/svg/edit_pen_long.svg";
 import DotsIcon from "../assets/svg/dots_icon.svg";
@@ -15,21 +14,17 @@ const GeneratedPost = () => {
   let isLoading = useSelector((state) => state.post.isLoading);
   console.log(isLoading);
 
-  const [randomSlice, setRandomSlice] = useState({ start: 0, end: 8 });
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(post());
+  }, [dispatch]);
 
-    if (results.length > 0) {
-      const maxStartIndex = results.length - 8;
-      const start = Math.floor(Math.random() * maxStartIndex);
-      setRandomSlice({ start, end: start + 8 });
-    }
-  }, [dispatch, results.length]);
+  let resultsSlice = results.slice(-8).reverse();
 
-  let resultsSlice = results.slice(randomSlice.start, randomSlice.end);
-  console.log("RESULTS SLICE", resultsSlice);
+  const handleRefresh = () => {
+    dispatch(post());
+  };
 
   return (
     <>
@@ -101,16 +96,7 @@ const GeneratedPost = () => {
       </Row>
       <Row>
         <Col className="my-4 text-center">
-          <button
-            className="secondaryBtn"
-            onClick={() => {
-              if (results.length > 8) {
-                const maxStartIndex = results.length - 8;
-                const start = Math.floor(Math.random() * maxStartIndex);
-                setRandomSlice({ start, end: start + 8 });
-              }
-            }}
-          >
+          <button className="secondaryBtn" onClick={handleRefresh}>
             Vedi altri post
           </button>
         </Col>
