@@ -7,10 +7,8 @@ import { profileMeAct } from "../redux/actions/profileMeAct";
 import { Link } from "react-router-dom";
 
 import Card from "react-bootstrap/Card";
-import EditPen from "../assets/svg/edit_pen_long.svg";
-import AddIcon from "../assets/svg/add_icon.svg";
-import RightArrow from "../assets/svg/right_arrow_icon.svg";
-import CompanyIcon from "../assets/company_icon.png";
+import FriendIcon from "../assets/svg/addFriend.svg";
+import BookmarkIcon from "../assets/svg/bookmark_icon.svg";
 
 function ParteSinistraHome() {
   const dispatch = useDispatch();
@@ -48,45 +46,56 @@ function ParteSinistraHome() {
                     </div>
                   </Col>
                 </Row>
-                <Row>
+                <Row className="border-bottom">
                   <Col>
                     <Row className="mt-5">
-                      <h4 className="my-3 text-center">{`${profileData.name} ${profileData.surname}`}</h4>
+                      <Link to="/profile" className="text-black">
+                        <h4 className="mt-3 text-center">{`${profileData.name} ${profileData.surname}`}</h4>
+                      </Link>
                       {/* <h4 className="my-3 text-center">Nome cognome</h4>  */}
                     </Row>
                     <Row className="gx-0">
                       <Col>
                         {/* <p className="mb-2 text-center">titolo</p> */}
-                        <p className="mb-2 text-center">{profileData.bio}</p>
+                        <p className="mb-3 text-center">{profileData.bio}</p>
                       </Col>
                     </Row>
-                    <Row className="  text-secondary mt-0 ">
-                      <Col className="d-flex">
+                    <Row className="timeAndLocation">
+                      <Col>
                         <div>
-                          <p className="mb-2 text-center">{profileData.area}</p>
+                          <p className="mb-4 text-center">{profileData.area}</p>
                           {/* <p className="mb-2 text-center">placeholder</p> */}
                         </div>
                       </Col>
                     </Row>
                   </Col>
                 </Row>
-                <hr />
-                <Row>
+
+                <Row className="border-bottom mt-3">
                   <Col>
                     <div className="d-flex justify-content-between">
-                      <p className="text-left text-muted mb-0">Collegamenti</p>
-                      <p className="text-right text-primary mb-0">500</p>
+                      <p className="text-left text-muted mb-0 fw-bold">
+                        Collegamenti <span className="text-primary">500</span>
+                      </p>
+                      <img src={FriendIcon} style={{ width: "20px" }} />
                     </div>
                     <p className="text-left font-weight-bold mt-0">Espandi la tua rete</p>
                   </Col>
                 </Row>
-                <hr />
-                <Row>
+
+                <Row className="border-bottom mt-3">
                   <Col>
                     {/* Accedi a strumenti e info */}
                     <p className="text-left text-muted mb-0">Accedi a strumenti e informazioni in esclusiva</p>
                     <p className="text-left font-weight-bold mt-0">Riattiva Premium con il 50 % di sconto </p>
-                    <hr className="bg-light" /> {/* Riga grigia */}
+                  </Col>
+                </Row>
+
+                <Row className="mt-3 align-items-center">
+                  <Col className="d-flex flex-grow-0 p-0 m-0">
+                    <img src={BookmarkIcon} style={{ width: "20px" }} />
+                  </Col>
+                  <Col className="d-flex flex-grow-1">
                     <p className="text-left font-weight-bold mt-0">I miei elementi</p>
                   </Col>
                 </Row>
