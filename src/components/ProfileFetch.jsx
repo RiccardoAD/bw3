@@ -18,7 +18,7 @@ function ProfileFetch({ profileData }) {
         </Col>
         <Col xs={9} className="pb-2">
           <Link to={`/profile/${profileData._id}`} style={{ textDecoration: "none" }}>
-            <p className="fw-bold m-0 text-black">
+            <p className="fw-bold m-0">
               {profileData.name} {profileData.surname}
             </p>
           </Link>

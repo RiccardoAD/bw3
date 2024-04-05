@@ -39,7 +39,7 @@ function ParteSinistraHome() {
                         <img
                           src={profileData.image}
                           alt="ProfileData"
-                          class="position-absolute top-100 start-50 translate-middle img-fluid rounded rounded-circle border border-3 border-white"
+                          className="position-absolute top-100 start-50 translate-middle img-fluid rounded rounded-circle border border-3 border-white"
                           id="miniProfile"
                         />
                       </Link>
