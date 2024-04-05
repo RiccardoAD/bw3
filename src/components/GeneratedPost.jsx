@@ -7,9 +7,7 @@ import Spinner from "./Spinner";
 
 import Card from "react-bootstrap/Card";
 import EditPen from "../assets/svg/edit_pen_long.svg";
-import AddIcon from "../assets/svg/add_icon.svg";
 import DotsIcon from "../assets/svg/dots_icon.svg";
-import CompanyIcon from "../assets/company_icon.png";
 
 const GeneratedPost = () => {
   let results = useSelector((state) => state.post.postState);
