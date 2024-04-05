@@ -42,8 +42,8 @@ html,
   border: 5px solid white;
   top: 7.5rem;
   left: 2rem;
-  min-width: 130px;
-  min-height: 130px;
+  width: 130px;
+  height: 130px;
 }
 
 @media screen and (min-width: 768px) {
