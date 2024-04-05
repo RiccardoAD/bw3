@@ -11,17 +11,17 @@ import { profileMeAct } from "../redux/actions/profileMeAct";
 import { putImg } from "../redux/actions/images";
 
 const ProfileHeader = function () {
-  /* const [avatar, setAvatar] = useState(null);
+  const [avatar, setAvatar] = useState(null);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setAvatar(file);
-  }; */
+  };
 
   const dispatch = useDispatch();
   const profileData = useSelector((state) => state.profileMeRed.profileData);
 
-  const [formData, setFormData] = useState({
+  const [profileFormData, setProfileFormData] = useState({
     name: "",
     surname: "",
     email: "",
@@ -48,14 +48,14 @@ const ProfileHeader = function () {
 
   useEffect(() => {
     if (profileData) {
-      setFormData(profileData);
+      setProfileFormData(profileData);
     }
   }, [profileData]);
 
   const handleSubmit = async (event) => {
-    /* const formData = new FormData();
+    const formData = new FormData();
     formData.append("profile", avatar);
-    dispatch(putImg(profileData._id, formData)); */
+    dispatch(putImg(profileData._id, formData));
 
     const form = event.currentTarget;
 
@@ -74,14 +74,14 @@ const ProfileHeader = function () {
             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzlhYWEyODFkODAwMTlhM2VjNTciLCJpYXQiOjE3MTIwNDg1NTQsImV4cCI6MTcxMzI1ODE1NH0.6sHKqviDfFSd8qv2L8aNnu7plOcEuiqkhnhPbe72vKw",
         },
         body: JSON.stringify({
-          name: formData.name,
-          surname: formData.surname,
-          email: formData.email,
-          username: formData.username,
-          bio: formData.bio,
-          title: formData.title,
-          area: formData.area,
-          image: formData.image,
+          name: profileFormData.name,
+          surname: profileFormData.surname,
+          email: profileFormData.email,
+          username: profileFormData.username,
+          bio: profileFormData.bio,
+          title: profileFormData.title,
+          area: profileFormData.area,
+          image: profileFormData.image,
         }),
       });
       if (!response.ok) {
@@ -90,7 +90,7 @@ const ProfileHeader = function () {
       const updatedProfileData = await response.json();
       console.log("Profile updated successfully:", updatedProfileData);
 
-      setFormData(updatedProfileData);
+      setProfileFormData(updatedProfileData);
       handleClose();
       window.location.reload();
     } catch (error) {
@@ -131,9 +131,9 @@ const ProfileHeader = function () {
                           required
                           type="text"
                           placeholder="Scrivi qui il tuo nome"
-                          value={formData.name}
+                          value={profileFormData.name}
                           onChange={(e) =>
-                            setFormData((prevFormData) => ({
+                            setProfileFormData((prevFormData) => ({
                               ...prevFormData,
                               name: e.target.value,
                             }))
@@ -146,9 +146,9 @@ const ProfileHeader = function () {
                           required
                           type="text"
                           placeholder="Scrivi qui il tuo cognome"
-                          value={formData.surname}
+                          value={profileFormData.surname}
                           onChange={(e) =>
-                            setFormData((prevFormData) => ({
+                            setProfileFormData((prevFormData) => ({
                               ...prevFormData,
                               surname: e.target.value,
                             }))
@@ -161,9 +161,9 @@ const ProfileHeader = function () {
                           required
                           type="email"
                           placeholder="Scrivi qui la tua email"
-                          value={formData.email}
+                          value={profileFormData.email}
                           onChange={(e) =>
-                            setFormData((prevFormData) => ({
+                            setProfileFormData((prevFormData) => ({
                               ...prevFormData,
                               email: e.target.value,
                             }))
@@ -176,9 +176,9 @@ const ProfileHeader = function () {
                           required
                           type="text"
                           placeholder="Scrivi qui il tuo username"
-                          value={formData.username}
+                          value={profileFormData.username}
                           onChange={(e) =>
-                            setFormData((prevFormData) => ({
+                            setProfileFormData((prevFormData) => ({
                               ...prevFormData,
                               username: e.target.value,
                             }))
@@ -191,9 +191,9 @@ const ProfileHeader = function () {
                           required
                           as="textarea"
                           rows={3}
-                          value={formData.bio}
+                          value={profileFormData.bio}
                           onChange={(e) =>
-                            setFormData((prevFormData) => ({
+                            setProfileFormData((prevFormData) => ({
                               ...prevFormData,
                               bio: e.target.value,
                             }))
@@ -206,9 +206,9 @@ const ProfileHeader = function () {
                           required
                           type="text"
                           placeholder="Scrivi qui la tua professione"
-                          value={formData.title}
+                          value={profileFormData.title}
                           onChange={(e) =>
-                            setFormData((prevFormData) => ({
+                            setProfileFormData((prevFormData) => ({
                               ...prevFormData,
                               title: e.target.value,
                             }))
@@ -221,9 +221,9 @@ const ProfileHeader = function () {
                           required
                           type="text"
                           placeholder="Scrivi qui la tua area geografica"
-                          value={formData.area}
+                          value={profileFormData.area}
                           onChange={(e) =>
-                            setFormData((prevFormData) => ({
+                            setProfileFormData((prevFormData) => ({
                               ...prevFormData,
                               area: e.target.value,
                             }))
@@ -236,9 +236,9 @@ const ProfileHeader = function () {
                           required
                           type="text"
                           placeholder="Inserisci l'indirizzo della tua icon"
-                          value={formData.image}
+                          value={profileFormData.image}
                           onChange={(e) =>
-                            setFormData((prevFormData) => ({
+                            setProfileFormData((prevFormData) => ({
                               ...prevFormData,
                               image: e.target.value,
                             }))
@@ -246,18 +246,18 @@ const ProfileHeader = function () {
                         />
                       </Form.Group>
 
-                     {/*  <Form.Group className="mb-3" controlId="immagine profilo">
+                        <Form.Group className="mb-3" controlId="immagine profilo">
                         <Form.Label>Carica la tua immagine profilo:</Form.Label>
                         <Form.Control
                           required
                           type="file"
                           placeholder="Inserisci la tua immagine"
-                          value={formData.image}
+                        
                           id="avatar"
                           accept="image/*"
                           onChange={handleImageChange}
                         />
-                      </Form.Group> */}
+                      </Form.Group> 
                     </Form>
 
                     {/*     FINE FORM
