@@ -65,40 +65,40 @@ function LinkedInNavbar() {
                         <Nav.Link as={Link} to="/home" className="p-0">
                           <img src={home} alt="home_icon" />
 
-                          <span>Home</span>
+                          <span className="d-none d-md-block">Home</span>
                         </Nav.Link>
                       </div>
 
                       <div className="icons_navbar">
                         <img src={people} alt="network_icon" />
                         <Nav.Link href="#" className="p-0 fs-6">
-                          <span>Network</span>
+                          <span className="d-none d-md-block">Network</span>
                         </Nav.Link>
                       </div>
 
                       <div className="icons_navbar">
                         <img src={work} alt="jobs_icon" />
                         <Nav.Link href="#" className="p-0 fs-6">
-                          <span>Jobs</span>
+                          <span className="d-none d-md-block">Jobs</span>
                         </Nav.Link>
                       </div>
 
                       <div className="icons_navbar">
                         <img src={message} alt="messages_icon" />
                         <Nav.Link href="#" className="p-0 fs-6">
-                          <span>Messages</span>
+                          <span className="d-none d-md-block">Messages</span>
                         </Nav.Link>
                       </div>
                       <div className="icons_navbar">
                         <img src={campana} alt="notification_icon" />
                         <Nav.Link href="#" className="p-0 fs-6">
-                          <span>Notifications</span>
+                          <span className="d-none d-md-block">Notifications</span>
                         </Nav.Link>
                       </div>
                     </Nav>
                   </div>
 
-                  <div className="icons_navbar">
+                  <div className="icons_navbar ps-3">
                     <div className="d-flex justify-content-center ">
                       <Link to={"/profile"}>
                         <img
@@ -111,7 +111,11 @@ function LinkedInNavbar() {
                       </Link>
                     </div>
 
-                    <NavDropdown title="Me" id="collapsible-nav-dropdown" className="p-0 dropdown-menu-left">
+                    <NavDropdown
+                      title="Me"
+                      id="collapsible-nav-dropdown"
+                      className="p-0 dropdown-menu-left d-none d-md-block"
+                    >
                       <div style={{ width: "18rem" }} className="dropdown-menu-right">
                         <div className="px-2">
                           <img
@@ -140,7 +144,7 @@ function LinkedInNavbar() {
                     <div className="container icons_navbar">
                       <div className="d-flex justify-content-center"></div>
                       <img src={business} alt="business_icon mb-0" />
-                      <NavDropdown title="Business" id="collapsible-nav-dropdown">
+                      <NavDropdown title="Business" id="collapsible-nav-dropdown" className=" d-none d-md-block">
                         <div>
                           <div>
                             <div>
