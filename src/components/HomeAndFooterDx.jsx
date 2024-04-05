@@ -26,36 +26,36 @@ const HomeAndFooterDx = () => {
               <GeneratedPost />
             </Col>
 
-            <Col className="col-12 col-lg-4">
+            <Col className="col-12 col-lg-4 timeAndLocation">
               <div className="bg-white my-2 py-3 border border-1r rounded ">
                 <div className="d-flex justify-content-between align-items-center">
-                  <p className="mb-0 px-2 py-1 fw-semibold">LinkedIn Notizie</p>
-                  <InfoSquareFill className=" me-2"></InfoSquareFill>
+                  <span className="mb-2 ps-3 py-1 fw-bold text-black fs-6">LinkedIn Notizie</span>
+                  <InfoSquareFill className="mb-2 me-3 text-black"></InfoSquareFill>
                 </div>
-                <ul className="me-2">
-                  <li className="Fs-9 mb-1">
-                    <p className="mb-0 fw-semibold">Piu sfide per la cybersecurity</p>
-                    <p className="mb-0 text-secondary Fs-8">Notizie principali &#x25CF; 26 lettori</p>
+                <ul className="me-3 text-black">
+                  <li className="mb-1">
+                    <p className="mb-0 fw-bold text-black">Piu sfide per la cybersecurity</p>
+                    <p className="timeAndLocation">Notizie principali <span className="text-primary">&#x25CF; 26 lettori</span></p>
                   </li>
-                  <li className="Fs-9 mb-1">
-                    <p className="mb-0 fw-semibold">SONDAGGIO: Cosa valuti di più...</p>
-                    <p className="mb-0 text-secondary Fs-8">1 giorno fa</p>
+                  <li className="mb-1">
+                    <p className="mb-0 fw-bold text-black">SONDAGGIO: Cosa valuti di più...</p>
+                    <p className="timeAndLocation">1 giorno fa</p>
                   </li>
-                  <li className="Fs-9 mb-1">
-                    <p className="mb-0 fw-semibold">Cercare lavoro nella tecnologia</p>
-                    <p className="mb-0 text-secondary Fs-8">1 giorno fa</p>
+                  <li className="mb-1">
+                    <p className="mb-0 fw-bold text-black">Cercare lavoro nella tecnologia</p>
+                    <p className="timeAndLocation">1 giorno fa</p>
                   </li>
-                  <li className="Fs-9 mb-1">
-                    <p className="mb-0 fw-semibold">quali confini tra vita e lavoro </p>
-                    <p className="mb-0 text-secondary Fs-8">1 giorno fa</p>
+                  <li className="mb-1">
+                    <p className="mb-0 fw-bold text-black">Quali confini tra vita e lavoro </p>
+                    <p className="timeAndLocation">1 giorno fa</p>
                   </li>
-                  <li className="Fs-9 mb-1">
-                    <p className="mb-0 fw-semibold">Saper arrivare al momento giusto</p>
-                    <p className="mb-0 text-secondary Fs-8">2 giorni fa</p>
+                  <li className="mb-1">
+                    <p className="mb-0 fw-bold text-black">Saper arrivare al momento giusto</p>
+                    <p className="timeAndLocation">2 giorni fa</p>
                   </li>
                 </ul>
                 <div className="d-flex align-items-center mx-4 text-secondary">
-                  <p className="mb-0 fw-semibold">Show more</p>
+                  <p className="mb-0 fw-bold">Show more</p>
                   <CaretDownFill className="ms-2"></CaretDownFill>
                 </div>
               </div>
