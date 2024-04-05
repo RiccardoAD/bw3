@@ -20,31 +20,31 @@ function ParteSinistraHome() {
           <Container>
             <Row className="profileContainer mt-3">
               <Col>
-                <Row className="">
-                  <div className=" p-0 cursor">
-                    <input type="file" id="bgImage" hidden />
-                    <label htmlFor="bgImage" className="bgProfile cursor ">
-                      <img
-                        className="bgProfile"
-                        src="https://cdn.create.vista.com/downloads/b2be2cb4-8abc-452e-b2a4-df3189cc2756_640.jpeg"
-                        alt="profileBg"
-                      />
-                    </label>
-                    <div id="miniProfile">
-                      {/* <img src="https://placedog.net/916?id=141" alt="Profile" className="position-absolute translate-middle-y img-fluid rounded rounded-circle  " /> */}
+                <Row>
+                  <Col className="position-relative p-0 m-0">
+                    <div className=" p-0 cursor">
+                      <input type="file" id="bgImage" hidden />
+                      <label htmlFor="bgImage" className="bgProfile cursor ">
+                        <img
+                          className="bgProfile"
+                          src="https://images.unsplash.com/photo-1593328125760-2a9bf6288fb2?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          alt="profileBg"
+                        />
+                      </label>
                       <Link to="/profile">
                         <img
                           src={profileData.image}
                           alt="ProfileData"
-                          className="position-absolute translate-middle-y img-fluid rounded rounded-circle  "
+                          class="position-absolute top-100 start-50 translate-middle img-fluid rounded rounded-circle border border-3 border-white"
+                          id="miniProfile"
                         />
                       </Link>
                     </div>
-                  </div>
+                  </Col>
                 </Row>
                 <Row>
-                  <Col className="position-relative">
-                    <Row className="mt-4 ">
+                  <Col>
+                    <Row className="mt-5">
                       <h4 className="my-3 text-center">{`${profileData.name} ${profileData.surname}`}</h4>
                       {/* <h4 className="my-3 text-center">Nome cognome</h4>  */}
                     </Row>

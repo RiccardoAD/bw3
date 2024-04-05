@@ -226,15 +226,15 @@ span {
 .bgProfile {
   object-fit: cover;
   width: 100%;
+  height: 120px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
 
-#miniProfile img {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 1rem;
-  margin-left: 7rem;
+#miniProfile {
+  width: 100px;
+  height: 100px;
+
 }
 
 /* colore backgroundglobale in root */
